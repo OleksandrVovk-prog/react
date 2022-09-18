@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StaticContext /> should render StaticContext component 1`] = `
+<DocumentFragment>
+  <div
+    class="staticContext"
+  >
+    <div
+      class="events"
+    >
+      <p>
+        In vino veritas, in aqua sanitas
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,16 @@
+.memo {
+  display: flex;
+  justify-content: center;
+  .update {
+    align-self: center;
+    &Btn {
+      display: block;
+      margin: 0 auto 16px auto;
+      width: 100%;
+      padding: 7px 0;
+    }
+  }
+  .events {
+    flex-direction: column;
+  }
+}
