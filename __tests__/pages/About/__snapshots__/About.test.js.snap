@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About /> should render About component 1`] = `
+exports[`<About /> should render About component 1`] = `
 <DocumentFragment>
   <div>
     <p
