@@ -13,7 +13,9 @@ function Home() {
           setRndJoke(joke.value);
         });
       }
-    }).catch(() => {});
+    }).catch(() => {
+      // set error
+    });
   };
 
   useEffect(() => {
