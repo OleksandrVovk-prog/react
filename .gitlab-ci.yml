@@ -12,6 +12,10 @@ variables:
 
 lint:
   stage: lint
+  only:
+    - main
+    - develop
+    - merge_requests
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
@@ -20,6 +24,10 @@ lint:
 
 test:
   stage: test
+  only:
+    - main
+    - develop
+    - merge_requests
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
@@ -45,6 +53,7 @@ sonarqube-check:
   allow_failure: true
   only:
     - main
+    - develop
     - merge_requests
 
 sonarqube-pr-decoration:
@@ -54,6 +63,7 @@ sonarqube-pr-decoration:
     - echo sonar.pullrequest.branch=$CI_MERGE_REQUEST_BRANCH_NAME >> sonar-project.properties
   only:
     - main
+    - develop
     - merge_requests
   tags:
     - kuber
