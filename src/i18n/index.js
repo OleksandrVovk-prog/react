@@ -16,7 +16,7 @@ const customDetector = {
   lookup() {
     let appLanguage = appLocales[0];
     const locale = window.navigator.language;
-    const localeShort = locale.split(/_|-/)[0];
+    const localeShort = locale.split(/[_-]/)[0];
     const isPresent = appLocales.find((item) => item === localeShort);
     const storeLang = localStorage.getItem('i18nextLng');
     if (storeLang) {
