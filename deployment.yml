@@ -45,7 +45,7 @@ metadata:
   name: ${CI_PROJECT_NAME}
   namespace: ${K8S_NAMESPACE}
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
     ingress.kubernetes.io/ssl-redirect: "true"
     kubernetes.io/tls-acme: "true"
     certmanager.k8s.io/cluster-issuer: letsencrypt-prod
