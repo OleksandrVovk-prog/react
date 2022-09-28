@@ -1,8 +1,7 @@
 stages:
   - lint
   - test
-  - sonarqube-check
-  - sonarqube-pr-decoration
+  - sonar
   - build
   - deploy
 
@@ -16,7 +15,6 @@ lint:
     - main
     - develop
     - merge_requests
-    - GOAL-434
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
@@ -29,7 +27,6 @@ test:
     - main
     - develop
     - merge_requests
-    - GOAL-434
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
@@ -37,7 +34,7 @@ test:
     - docker run --rm --name react react:latest npm run test:ci
 
 sonarqube-check:
-  stage: build
+  stage: sonar
   tags:
     - kuber
   image:
@@ -57,10 +54,9 @@ sonarqube-check:
     - main
     - develop
     - merge_requests
-    - GOAL-434
 
 sonarqube-pr-decoration:
-  stage: build
+  stage: sonar
   script:
     - echo sonar.pullrequest.key=$CI_MERGE_REQUEST_IID >> sonar-project.properties
     - echo sonar.pullrequest.branch=$CI_MERGE_REQUEST_BRANCH_NAME >> sonar-project.properties
@@ -68,7 +64,6 @@ sonarqube-pr-decoration:
     - main
     - develop
     - merge_requests
-    - GOAL-434
   tags:
     - kuber
 
