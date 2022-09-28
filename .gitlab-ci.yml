@@ -72,7 +72,6 @@ build:
   only:
     - main
     - develop
-    - GOAL-434
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
@@ -87,7 +86,6 @@ deploy:
   only:
     - main
     - develop
-    - GOAL-434
   image: $DEPLOY_DOCKER_IMAGE
   script:
     - grdp-ctl
