@@ -18,8 +18,8 @@ lint:
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
-    - docker build --network=host -t react:latest .
-    - docker run --rm --name react react:latest npm run lint
+    - docker build --network=host -t react-${CI_COMMIT_SHA}:latest .
+    - docker run --rm --name react-${CI_COMMIT_SHA} react-${CI_COMMIT_SHA}:latest npm run lint
 
 test:
   stage: test
@@ -30,8 +30,8 @@ test:
   image: $BUILD_DOCKER_IMAGE
   script:
     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
-    - docker build --network=host -t react:latest .
-    - docker run --rm --name react react:latest npm run test:ci
+    - docker build --network=host -t react-${CI_COMMIT_SHA}:latest .
+    - docker run --rm --name react-${CI_COMMIT_SHA} react-${CI_COMMIT_SHA}:latest npm run test:ci
 
 sonarqube-check:
   stage: sonar
