@@ -14,5 +14,3 @@ RUN npm install
 
 # add app
 COPY . /usr/src/app
-
-EXPOSE 3000
