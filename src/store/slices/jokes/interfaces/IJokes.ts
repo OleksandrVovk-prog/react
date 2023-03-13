@@ -1,11 +1,7 @@
-export enum JokeStatuses {
-  idle = 'idle',
-  loading = 'loading',
-  failed = 'failed',
-}
+import Statuses from '../../../../constants/Statuses';
 
 export default interface JokesState {
   value: number;
-  status: JokeStatuses;
+  status: Statuses;
   joke: string | undefined
 }

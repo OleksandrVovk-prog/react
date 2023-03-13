@@ -1,22 +1,34 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
+import { toggleLocale } from '../../store/slices/translates/slice';
+import { selectLocale } from '../../store/slices/translates/selectors';
+import Title from '../../components/Title/Title';
+import styles from './sass/Header.module.scss';
 
 function Header(): JSX.Element {
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const locale = useAppSelector(selectLocale);
   return (
-    <header className="header">
-      <nav className="header__nav">
-        <ul className="header__nav-list">
-          <li className="header__nav-item">
-            <Link to="/" className="header__nav-link">
-              Home
-            </Link>
-          </li>
-          <li className="header__nav-item">
-            <Link to="/about" className="header__nav-link">
-              About
-            </Link>
-          </li>
-        </ul>
+    <header className={styles.header}>
+      <Title text={t('common.welcomeMessage')} />
+      <nav className={styles.headerNav}>
+        <Link to="/" className={styles.headerNavLink}>
+          { t('home.pageTitle') }
+        </Link>
+        <Link to="/about" className={styles.headerNavLink}>
+          { t('about.pageTitle') }
+        </Link>
       </nav>
+      <button
+        className={styles.toggleLanguage}
+        data-testid="toggle-language-button"
+        type="button"
+        onClick={() => dispatch(toggleLocale())}
+      >
+        {locale.toUpperCase()}
+      </button>
     </header>
   );
 }

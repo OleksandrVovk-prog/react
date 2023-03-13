@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import IJokes, { JokeStatuses } from './interfaces/IJokes';
+import Statuses from '../../../constants/Statuses';
+import IJokes from './interfaces/IJokes';
+import IJokeResponse from './interfaces/IJokeResponse';
 
 const initialState: IJokes = {
   value: 0,
-  status: JokeStatuses.idle,
+  status: Statuses.idle,
   joke: undefined,
 };
 
@@ -11,7 +13,7 @@ export const fetchJoke = createAsyncThunk(
   'jokes/fetchJoke',
   async (): Promise<IJokes['joke']> => {
     const response = await fetch('https://api.chucknorris.io/jokes/random');
-    const data = await response.json();
+    const data: IJokeResponse = await response.json();
     return data.value;
   },
 );
@@ -33,14 +35,14 @@ export const jokesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchJoke.pending, (state) => {
-        state.status = JokeStatuses.loading;
+        state.status = Statuses.loading;
       })
       .addCase(fetchJoke.fulfilled, (state, action) => {
-        state.status = JokeStatuses.idle;
+        state.status = Statuses.idle;
         state.joke = action.payload;
       })
       .addCase(fetchJoke.rejected, (state) => {
-        state.status = JokeStatuses.failed;
+        state.status = Statuses.failed;
       });
   },
 });
