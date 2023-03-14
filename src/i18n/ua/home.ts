@@ -1,3 +1,4 @@
 export default {
-  pageTitle: 'Домашня',
+  pageTitle: 'Головна',
+  getJoke: 'Новий жарт',
 };

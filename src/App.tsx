@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 
 import './i18n';
+import './styles/global.scss';
 
 function App(): JSX.Element {
   return (
