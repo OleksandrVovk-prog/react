@@ -9,11 +9,11 @@
   .headerNav {
     align-items: center;
     flex-direction: column;
-    .headerNavLink {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-    }
+  }
+  .headerNavLink {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
   }
   .toggleLanguage {
     position: absolute;

@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
 import { toggleLocale } from '../../store/slices/translates/slice';
 import { selectLocale } from '../../store/slices/translates/selectors';
 import Title from '../../components/Title/Title';
+
 import styles from './sass/Header.module.scss';
 
 function Header(): JSX.Element {
@@ -21,14 +22,18 @@ function Header(): JSX.Element {
           { t('about.pageTitle') }
         </Link>
       </nav>
-      <button
-        className={styles.toggleLanguage}
-        data-testid="toggle-language-button"
-        type="button"
-        onClick={() => dispatch(toggleLocale())}
-      >
-        {locale.toUpperCase()}
-      </button>
+      <div className={styles.toggleLanguage}>
+        <Link to="/login" className={styles.headerNavLink}>
+          { t('login.pageTitle') }
+        </Link>
+        <button
+          data-testid="toggle-language-button"
+          type="button"
+          onClick={() => dispatch(toggleLocale())}
+        >
+          {locale.toUpperCase()}
+        </button>
+      </div>
     </header>
   );
 }

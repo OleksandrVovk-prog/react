@@ -1,4 +1,4 @@
 export default interface IJokeResponse {
   id: string,
-  value: string,
+  value: string | undefined,
 }

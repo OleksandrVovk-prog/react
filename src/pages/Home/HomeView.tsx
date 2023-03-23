@@ -1,28 +1,23 @@
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
-import { selectJoke, selectStatus } from '../../store/slices/jokes/selectors';
-import { fetchJoke } from '../../store/slices/jokes/slice';
 import Loader from '../../components/Loader/Loader';
-import Statuses from '../../constants/Statuses';
+import { useFetchJokeQuery } from '../../store/slices/jokes/apis/jokes';
 
-import titleStyles from '../../styles/title.module.scss';
 import styles from './sass/HomeView.module.scss';
 
 function HomeView(): JSX.Element {
-  const status = useAppSelector(selectStatus);
-  const joke = useAppSelector(selectJoke);
+  const { data, refetch, isFetching } = useFetchJokeQuery();
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   return (
     <div>
-      <h1 className={titleStyles.pageTitle}>{ t('home.pageTitle') }</h1>
       <div className={styles.content}>
-        {status === Statuses.loading ? (
+        {isFetching ? (
           <Loader />
         ) : (
-          <button type="button" onClick={() => dispatch(fetchJoke())}>{ t('home.getJoke') }</button>
+          <>
+            <button type="button" onClick={refetch}>{ t('home.getJoke') }</button>
+            <p>{data?.value}</p>
+          </>
         )}
-        {joke && <p>{ joke }</p>}
       </div>
     </div>
   );
