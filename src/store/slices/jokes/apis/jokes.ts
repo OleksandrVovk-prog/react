@@ -16,5 +16,5 @@ const jokesApi = createApi({
   }),
 });
 
-export const { useFetchJokeQuery, useLazyFetchJokeQuery } = jokesApi;
+export const { useFetchJokeQuery } = jokesApi;
 export default jokesApi;

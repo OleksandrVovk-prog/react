@@ -13,7 +13,7 @@ export const appLocales: string[] = Object.keys(resources);
 
 const customDetector = {
   name: 'languageDetector',
-  lookup() {
+  lookup(): string {
     let appLanguage = appLocales[0];
     const locale = window.navigator.language;
     const localeShort = locale.split(/[_-]/)[0];
