@@ -35,6 +35,9 @@
     "husky": "^8.0.3",
     "typescript": "^5.0.2"
   },
+  "overrides": {
+    "typescript": "^5.0.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
