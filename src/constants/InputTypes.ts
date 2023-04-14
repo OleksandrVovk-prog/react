@@ -1,6 +1,6 @@
 enum InputTypes {
-  text = 'text',
-  password = 'password',
+  Text = 'TEXT',
+  Password = 'PASSWORD',
 }
 
 export default InputTypes;

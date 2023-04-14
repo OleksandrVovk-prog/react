@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import IAuthResponse from './interfaces/IAuthResponse';
 import authApi from './apis/auth';
+
+import IAuthResponse from './interfaces/IAuthResponse';
 
 const initialState: IAuthResponse = {
   id: undefined,
@@ -11,6 +12,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    logout: () => initialState,
   },
   extraReducers: (builder): void => {
     builder.addMatcher(
@@ -22,5 +24,7 @@ const userSlice = createSlice({
     );
   },
 });
+
+export const { logout } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import AUTHENTICATED_USER from '../tags';
+
 import IAuthResponse from '../interfaces/IAuthResponse';
 import IAuthRequest from '../interfaces/IAuthRequest';
-import AUTHENTICATED_USER from '../tags';
 
 const authApi = createApi({
   reducerPath: 'authApi',

@@ -1,15 +1,17 @@
 import { Navigate } from 'react-router-dom';
 import { useAppSelector } from '../../store/hooks/useApp';
-import LoginView from './LoginView';
 import { selectUserId } from '../../store/slices/auth/selectors';
+import Page from './Page';
 
-function Login(): JSX.Element {
+import IPageProtected from './interfaces/IPageProtected';
+
+function PageProtected({ redirectUri }: IPageProtected): JSX.Element {
   const id = useAppSelector(selectUserId);
   return id ? (
-    <Navigate to="/" />
+    <Page />
   ) : (
-    <LoginView />
+    <Navigate to={redirectUri} />
   );
 }
 
-export default Login;
+export default PageProtected;

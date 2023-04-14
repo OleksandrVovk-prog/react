@@ -1,7 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
 import TextInput from './components/TextInput';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import { useLoginMutation } from '../../store/slices/auth/apis/auth';
 import useErrorMessage from '../../hooks/useErrorMessage';
 import { loginSchema } from '../../utils/validators';
@@ -10,17 +12,21 @@ import InputTypes from '../../constants/InputTypes';
 import ILoginForm from './interfaces/ILoginForm';
 
 import styles from './sass/LoginView.module.scss';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 function LoginView(): JSX.Element {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [login, { isLoading, isError, error }] = useLoginMutation();
   const errorMessage = useErrorMessage(error);
-  const { register, handleSubmit, formState: { errors } } = useForm<ILoginForm>({
+  const {
+    register, handleSubmit, reset, formState: { errors },
+  } = useForm<ILoginForm>({
     resolver: yupResolver(loginSchema),
   });
   const onSubmit = handleSubmit((credentials): void => {
     login(credentials);
+    reset();
+    navigate('/');
   });
   return (
     <div className={styles.loginForm}>
@@ -39,7 +45,7 @@ function LoginView(): JSX.Element {
           label={t('login.password')}
           register={register}
           errors={errors.password}
-          type={InputTypes.password}
+          type={InputTypes.Password}
         />
         <input type="submit" disabled={isLoading || Object.keys(errors).length > 0} />
       </form>

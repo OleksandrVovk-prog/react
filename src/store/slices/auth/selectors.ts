@@ -1,4 +1,5 @@
 import type { RootState } from '../../types/TStore';
+
 import IAuthResponse from './interfaces/IAuthResponse';
 
 export const selectUserId = (state: RootState): IAuthResponse['id'] => state.auth.id;

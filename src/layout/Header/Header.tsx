@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
 import { toggleLocale } from '../../store/slices/translates/slice';
 import { selectLocale } from '../../store/slices/translates/selectors';
-import Title from '../../components/Title/Title';
 import { selectUserId } from '../../store/slices/auth/selectors';
+import { logout } from '../../store/slices/auth/slice';
+import Title from '../../components/Title/Title';
 import authApi, { useFetchUserQuery } from '../../store/slices/auth/apis/auth';
 
 import styles from './sass/Header.module.scss';
@@ -14,7 +15,10 @@ function Header(): JSX.Element {
   const dispatch = useAppDispatch();
   const id = useAppSelector(selectUserId);
   const locale = useAppSelector(selectLocale);
-  const { data } = useFetchUserQuery(id, { skip: !id });
+  const { data } = useFetchUserQuery(id, {
+    skip: !id,
+    selectFromResult: ({ data: userData }) => ({ data: id ? userData : undefined }),
+  });
   return (
     <header className={styles.header}>
       <Title text={t('common.welcomeMessage')} />
@@ -32,6 +36,7 @@ function Header(): JSX.Element {
             to="/login"
             onClick={() => {
               dispatch(authApi.util.resetApiState());
+              dispatch(logout());
             }}
             className={styles.headerNavLink}
           >
