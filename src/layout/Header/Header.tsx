@@ -9,16 +9,22 @@ import Title from '../../components/Title/Title';
 import authApi, { useFetchUserQuery } from '../../store/slices/auth/apis/auth';
 
 import styles from './sass/Header.module.scss';
+import LinkButton from '../../components/LinkButton/LinkButton';
+import Loader from '../../components/Loader/Loader';
 
 function Header(): JSX.Element {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const id = useAppSelector(selectUserId);
   const locale = useAppSelector(selectLocale);
-  const { data } = useFetchUserQuery(id, {
+  const { data, isFetching } = useFetchUserQuery(id, {
     skip: !id,
-    selectFromResult: ({ data: userData }) => ({ data: id ? userData : undefined }),
+    selectFromResult: (result) => ({ ...result, data: id ? result.data : undefined }),
   });
+  const logoutHandler = () => {
+    dispatch(authApi.util.resetApiState());
+    dispatch(logout());
+  };
   return (
     <header className={styles.header}>
       <Title text={t('common.welcomeMessage')} />
@@ -31,24 +37,16 @@ function Header(): JSX.Element {
         </Link>
       </nav>
       <div className={styles.toggleLanguage}>
-        {data?.id ? (
-          <Link
-            to="/login"
-            onClick={() => {
-              dispatch(authApi.util.resetApiState());
-              dispatch(logout());
-            }}
-            className={styles.headerNavLink}
-          >
-            { `${t('login.logout')}(${data.firstName})` }
-          </Link>
+        {isFetching ? (
+          <Loader />
         ) : (
-          <Link
-            to="/login"
-            className={styles.headerNavLink}
-          >
-            { t('login.pageTitle') }
-          </Link>
+          <span>
+            {data?.id ? (
+              <LinkButton to="/login" onClick={logoutHandler} title={`${t('login.logout')}(${data.firstName})`} />
+            ) : (
+              <LinkButton to="/login" title={t('login.pageTitle')} />
+            )}
+          </span>
         )}
         <button
           data-testid="toggle-language-button"
