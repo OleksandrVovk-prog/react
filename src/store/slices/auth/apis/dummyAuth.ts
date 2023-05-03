@@ -1,16 +1,10 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-import AUTHENTICATED_USER from '../tags';
+import dummyApi from '../../../apis/dummy';
+import AUTHENTICATED_USER from '../../../tags/auth';
 
 import IAuthResponse from '../interfaces/IAuthResponse';
 import IAuthRequest from '../interfaces/IAuthRequest';
 
-const authApi = createApi({
-  reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_API,
-  }),
-  tagTypes: [AUTHENTICATED_USER],
+const dummyAuthApi = dummyApi.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation<IAuthResponse, Partial<IAuthRequest>>({
       invalidatesTags: [AUTHENTICATED_USER],
@@ -30,5 +24,6 @@ const authApi = createApi({
   }),
 });
 
-export const { useLoginMutation, useFetchUserQuery } = authApi;
-export default authApi;
+export const { useLoginMutation, useFetchUserQuery } = dummyAuthApi;
+
+export default dummyAuthApi;

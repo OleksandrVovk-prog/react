@@ -12,10 +12,10 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import auth from './slices/auth/slice';
-import authApi from './slices/auth/apis/auth';
 import jokes from './slices/jokes/slice';
-import jokesApi from './slices/jokes/apis/jokes';
 import translates from './slices/translates/slice';
+import dummyApi from './apis/dummy';
+import jokesApi from './apis/jokes';
 
 const persistConfig = {
   key: 'root',
@@ -27,10 +27,10 @@ const persistConfig = {
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
-    jokes,
     [jokesApi.reducerPath]: jokesApi.reducer,
+    [dummyApi.reducerPath]: dummyApi.reducer,
+    jokes,
     auth,
-    [authApi.reducerPath]: authApi.reducer,
     translates,
   }),
 );
@@ -44,7 +44,7 @@ export const store = configureStore({
   })
     .concat([
       jokesApi.middleware,
-      authApi.middleware,
+      dummyApi.middleware,
     ]),
 });
 

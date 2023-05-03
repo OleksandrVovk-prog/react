@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import authApi from './apis/auth';
+// import dummyApi from '../../apis/dummy';
+// import authApi from './apis/auth';
+import dummyAuthApi from './apis/dummyAuth';
 
 import IAuthResponse from './interfaces/IAuthResponse';
 
@@ -16,7 +18,7 @@ const userSlice = createSlice({
   },
   extraReducers: (builder): void => {
     builder.addMatcher(
-      authApi.endpoints.login.matchFulfilled,
+      dummyAuthApi.endpoints.login.matchFulfilled,
       (state, { payload }): void => {
         state.id = payload.id;
         state.token = payload.token;

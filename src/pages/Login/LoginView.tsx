@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import TextInput from './components/TextInput';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import { useLoginMutation } from '../../store/slices/auth/apis/auth';
+import { useLoginMutation } from '../../store/slices/auth/apis/dummyAuth';
 import useErrorMessage from '../../hooks/useErrorMessage';
 import { loginSchema } from '../../utils/validators';
 import InputTypes from '../../constants/InputTypes';

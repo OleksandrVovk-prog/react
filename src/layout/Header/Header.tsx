@@ -6,7 +6,8 @@ import { selectLocale } from '../../store/slices/translates/selectors';
 import { selectUserId } from '../../store/slices/auth/selectors';
 import { logout } from '../../store/slices/auth/slice';
 import Title from '../../components/Title/Title';
-import authApi, { useFetchUserQuery } from '../../store/slices/auth/apis/auth';
+import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
+import dummyAuth from '../../store/apis/dummy';
 
 import styles from './sass/Header.module.scss';
 import LinkButton from '../../components/LinkButton/LinkButton';
@@ -22,7 +23,7 @@ function Header(): JSX.Element {
     selectFromResult: (result) => ({ ...result, data: id ? result.data : undefined }),
   });
   const logoutHandler = () => {
-    dispatch(authApi.util.resetApiState());
+    dispatch(dummyAuth.util.resetApiState());
     dispatch(logout());
   };
   return (

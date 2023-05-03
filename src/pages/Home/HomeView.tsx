@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import Loader from '../../components/Loader/Loader';
-import { useFetchJokeQuery } from '../../store/slices/jokes/apis/jokes';
+import useFetchJokeQuery from '../../store/slices/jokes/apis/jokesRandom';
 
 import styles from './sass/HomeView.module.scss';
 
