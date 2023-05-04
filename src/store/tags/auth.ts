@@ -1,3 +1,4 @@
-const AUTHENTICATED_USER = 'AUTHENTICATED_USER';
+const prefix = 'AUTH/';
+const AUTHENTICATED_USER = `${prefix}AUTHENTICATED_USER`;
 
 export default AUTHENTICATED_USER;

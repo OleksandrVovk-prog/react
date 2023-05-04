@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import dummyApi from '../../apis/dummy';
-// import authApi from './apis/auth';
 import dummyAuthApi from './apis/dummyAuth';
 
 import IAuthResponse from './interfaces/IAuthResponse';
