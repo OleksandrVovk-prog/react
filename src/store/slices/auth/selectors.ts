@@ -1,7 +1,15 @@
+import { createSelector } from '@reduxjs/toolkit';
 import type { RootState } from '../../types/TStore';
 
 import IAuthResponse from './interfaces/IAuthResponse';
 
-export const selectUserId = (state: RootState): IAuthResponse['id'] => state.auth.id;
+const selectAuth = (state: RootState): IAuthResponse => state.auth;
 
-export const selectUserToken = (state: RootState): IAuthResponse['token'] => state.auth.token;
+export const selectUserId = createSelector(selectAuth, (auth) => auth.id);
+export const selectUserToken = createSelector(selectAuth, (auth) => auth.token);
+
+export const selectCurrentUser = createSelector(
+  (data: IAuthResponse | undefined) => data,
+  (data: IAuthResponse | undefined, userId: IAuthResponse['id'] | undefined) => userId,
+  (data, userId) => (userId ? data : undefined),
+);

@@ -14,7 +14,7 @@ const dummyAuthApi = dummyApi.injectEndpoints({
         body: user,
       }),
     }),
-    fetchUser: builder.query<IAuthResponse, number | undefined>({
+    fetchUser: builder.query<IAuthResponse, IAuthResponse['id']>({
       providesTags: [AUTHENTICATED_USER],
       query: (id) => ({
         url: `/users/${id}`,

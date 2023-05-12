@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
 import { toggleLocale } from '../../store/slices/translates/slice';
 import { selectLocale } from '../../store/slices/translates/selectors';
-import { selectUserId } from '../../store/slices/auth/selectors';
+import { selectUserId, selectCurrentUser } from '../../store/slices/auth/selectors';
 import { logout } from '../../store/slices/auth/slice';
 import Title from '../../components/Title/Title';
 import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
@@ -20,7 +20,7 @@ function Header(): JSX.Element {
   const locale = useAppSelector(selectLocale);
   const { data, isFetching } = useFetchUserQuery(id, {
     skip: !id,
-    selectFromResult: (result) => ({ ...result, data: id ? result.data : undefined }),
+    selectFromResult: (result) => ({ ...result, data: selectCurrentUser(result.data, id) }),
   });
   const logoutHandler = () => {
     dispatch(dummyAuth.util.resetApiState());
