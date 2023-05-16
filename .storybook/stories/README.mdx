@@ -1,0 +1,108 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="README" />
+
+# Welcome to Onix react example project
+
+Here you can find boilerplate for your React project.
+
+## Getting started
+To run the project locally, you need:
+- [x] install dependencies `npm install`
+- [x] run the project `npm start`
+
+## Available scripts
+- [x] `npm start` - run the project locally
+- [x] `npm run build` - build the project
+- [x] `npm run storybook` - run storybook
+- [x] `npm run build-storybook` - build storybook
+- [x] `npm run test` - run unit tests
+- [x] `npm run lint` - run eslint
+- [x] `npm run lint:fix` - run eslint with fix
+
+## List of features
+- [x] Pure react application
+- [x] Redux store management with persist storage
+- [x] Multi-language support
+- [x] Storybook component description
+- [x] Eslint with airbnb config
+- [x] Pre-commit and pre-push hooks
+- [x] Sonarqube integration
+- [x] React testing library for unit testing
+
+## List of technologies
+- [x] [React](https://react.dev/)
+- [x] [Typescript](https://www.typescriptlang.org/)
+- [x] [Redux](https://redux.js.org/)
+- [x] [Redux-toolkit](https://redux-toolkit.js.org/)
+- [x] [Redux-toolkit-query](https://redux-toolkit.js.org/rtk-query/overview)
+- [x] [Redux-persist](https://www.npmjs.com/package/redux-persist)
+- [x] [React-router](https://reactrouter.com/)
+- [x] [React-hook-form](https://react-hook-form.com/)
+- [x] [React-i18next](https://react.i18next.com/)
+- [x] [Sass](https://sass-lang.com/)
+- [x] [Eslint](https://eslint.org/)
+- [x] [EsLint config airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+- [x] [Storybook](https://storybook.js.org/)
+- [x] [React testing library](https://testing-library.com/docs/react-testing-library/intro/)
+- [x] [Sonarqube](https://www.sonarqube.org/)
+
+## Project structure
+```
+├── .husky //pre-commit and pre-push hooks
+├── .storybook // storybook configuration and stories
+│   ├── decorators // storybook decorators for preview and stories
+│   ├── stories // storybook stories
+│   ├── main.js // storybook configuration
+│   ├── preview.js // storybook preview configuration
+├── public // public folder with static files, robots.txt, favicon, etc.
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   ├── robots.txt
+├── src // source folder with all project files
+│   ├── assets // assets folder with images, fonts, etc.
+│   │   ├── fonts
+│   │   ├── images
+│   ├── components // folder with design system components and components that can be shared between pages
+│   │   ├── Button
+│   │   ├── ...
+│   ├── constants // folder with constants that can be shared between pages and components
+│   │   ├── StatusCodes.ts
+│   │   ├── ...
+│   ├── hooks // folder with custom hooks that can be shared between pages and components
+│   │   ├── useErrorMessages.ts
+│   │   ├── ...
+│   ├── i18n // folder with i18n configuration and translations
+│   │   ├── en
+│   │   ├── ...
+│   │   ├── index.ts
+│   ├── layout // folder with layout components like page layout, header, footer etc.
+│   │   ├── ...
+│   ├── pages // folder with pages
+│   │   ├── ...
+│   ├── store // folder with redu-toolkit store configuration
+│   │   ├── apis // folder with api configuration for redux-toolkit-query. Each api should be in separate file
+│   │   ├── hooks // folder with custom hooks for redux-toolkit-query
+│   │   ├── slices // folder with redux-toolkit slices. Each subfolder should contain slice and can contain hooks and apis injections
+│   │   │   ├── translates
+│   │   │   ├── ...
+│   │   ├── tags // folder with tags for redux-toolkit-query
+│   │   │   ├── ...
+│   │   ├── types // folder with types for redux-toolkit-query
+│   │   │   ├── ...
+│   │   ├── store.ts
+│   ├── styles // folder with global styles for the project
+│   │   ├── ...
+│   ├── utils // folder with utils functions that can be shared between pages and components
+│   │   ├── ...
+│   ├── App.tsx // main application component
+│   ├── index.tsx
+│   └── ...
+├── .env
+├── .env.example
+├── .eslintignore
+├── .eslintrc.json
+├── .gitignore
+└── ...
+```

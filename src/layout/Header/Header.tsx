@@ -22,7 +22,7 @@ function Header(): JSX.Element {
     skip: !id,
     selectFromResult: (result) => ({ ...result, data: selectCurrentUser(result.data, id) }),
   });
-  const logoutHandler = () => {
+  const onLogout = () => {
     dispatch(dummyAuth.util.resetApiState());
     dispatch(logout());
   };
@@ -43,7 +43,7 @@ function Header(): JSX.Element {
         ) : (
           <span>
             {data?.id ? (
-              <LinkButton to="/login" onClick={logoutHandler} title={`${t('login.logout')}(${data.firstName})`} />
+              <LinkButton to="/login" onClick={onLogout} title={`${t('login.logout')}(${data.firstName})`} />
             ) : (
               <LinkButton to="/login" title={t('login.pageTitle')} />
             )}
