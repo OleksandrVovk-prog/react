@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import i18n from '../src/i18n';
-import PreviewDecorator from './decorators/Preview/Preview';
+import PreviewDecorator from './decorators/Preview';
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +10,11 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
+      },
+    },
+    options: {
+      storySort: {
+        order: ['README'],
       },
     },
   },
