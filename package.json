@@ -46,6 +46,7 @@
     "husky": "^8.0.3",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.12",
+    "storybook-addon-mock": "^4.0.0",
     "typescript": "^5.0.2",
     "webpack": "^5.82.1"
   },

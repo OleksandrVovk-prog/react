@@ -5,6 +5,9 @@ import ITextInput from '../interfaces/ITextInput';
 
 import styles from '../sass/TextInput.module.scss';
 
+/**
+ * TextInput component for login form
+ */
 function TextInput({
   name, label, register, errors, type,
 }: ITextInput): JSX.Element {

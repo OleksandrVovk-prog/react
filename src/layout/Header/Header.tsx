@@ -13,6 +13,9 @@ import styles from './sass/Header.module.scss';
 import LinkButton from '../../components/LinkButton/LinkButton';
 import Loader from '../../components/Loader/Loader';
 
+/**
+ * Main layout header component
+ */
 function Header(): JSX.Element {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();

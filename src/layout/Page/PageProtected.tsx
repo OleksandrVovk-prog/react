@@ -5,6 +5,9 @@ import Page from './Page';
 
 import IPageProtected from './interfaces/IPageProtected';
 
+/**
+ * Protected page layout
+ */
 function PageProtected({ redirectUri }: IPageProtected): JSX.Element {
   const id = useAppSelector(selectUserId);
   return id ? (

@@ -35,7 +35,7 @@
     ],
     "jsx-a11y/label-has-for": "off",
     "react/jsx-props-no-spreading": ["error", {
-      "exceptions": ["input"]
+      "exceptions": ["input", "**/*.stories.tsx"]
     }],
     "react/jsx-uses-react": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
     "react/react-in-jsx-scope": "off" // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
@@ -47,6 +47,12 @@
       ],
       "rules": {
         "no-param-reassign": ["error", { "props": false }]
+      }
+    },
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "react/jsx-props-no-spreading": "off"
       }
     }
   ]

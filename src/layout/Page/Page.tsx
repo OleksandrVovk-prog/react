@@ -3,6 +3,9 @@ import usePageTitle from '../../hooks/usePageTitle';
 import Header from '../Header/Header';
 import Title from '../../components/Title/Title';
 
+/**
+ * Main page layout
+ */
 function Page(): JSX.Element {
   const pageTitle = usePageTitle();
   return (

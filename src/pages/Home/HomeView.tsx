@@ -4,6 +4,9 @@ import useFetchJokeQuery from '../../store/slices/jokes/apis/jokesRandom';
 
 import styles from './sass/HomeView.module.scss';
 
+/**
+ * Home page view
+ */
 function HomeView(): JSX.Element {
   const { data, refetch, isFetching } = useFetchJokeQuery();
   const { t } = useTranslation();

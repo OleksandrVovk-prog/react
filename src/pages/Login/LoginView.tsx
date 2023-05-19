@@ -13,6 +13,9 @@ import ILoginForm from './interfaces/ILoginForm';
 
 import styles from './sass/LoginView.module.scss';
 
+/**
+ * Login page view
+ */
 function LoginView(): JSX.Element {
   const navigate = useNavigate();
   const { t } = useTranslation();
