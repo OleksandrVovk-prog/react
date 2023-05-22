@@ -4,6 +4,15 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '../../src/store/store';
 
 function Preview(Story): JSX.Element {
+  const mainState = store.getState();
+  store.replaceReducer((state = mainState) => ({
+    ...state,
+    auth: {
+      ...state.auth,
+      id: 1,
+      token: 'token',
+    }
+  }));
   return (
     <BrowserRouter>
       <Provider store={store}>
