@@ -5,7 +5,7 @@ import { toggleLocale } from '../../store/slices/translates/slice';
 import { selectLocale } from '../../store/slices/translates/selectors';
 import { selectUserId, selectCurrentUser } from '../../store/slices/auth/selectors';
 import { logout } from '../../store/slices/auth/slice';
-import Title from '../../components/Title/Title';
+import Subtitle from '../../components/Subtitle/Subtitle';
 import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
 import dummyAuth from '../../store/apis/dummy';
 
@@ -30,8 +30,8 @@ function Header(): JSX.Element {
     dispatch(logout());
   };
   return (
-    <header className={styles.header}>
-      <Title text={t('common.welcomeMessage')} />
+    <header className={styles.header} data-testid="header">
+      <Subtitle text={t('common.welcomeMessage')} />
       <nav className={styles.headerNav}>
         <Link to="/" className={styles.headerNavLink}>
           { t('home.pageTitle') }

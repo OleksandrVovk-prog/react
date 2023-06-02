@@ -63,7 +63,8 @@
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "storybook-check": "./.scripts/storybook-check.js"
+    "storybook-check": "./.scripts/storybook-check.js",
+    "tests-check": "./.scripts/tests-check.js"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessage /> should render component 1`] = `
+<DocumentFragment>
+  <span
+    class="errorMessage"
+  >
+    message
+  </span>
+</DocumentFragment>
+`;
