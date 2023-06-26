@@ -45,6 +45,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "husky": "^8.0.3",
     "prop-types": "^15.8.1",
+    "sass-loader": "^13.3.2",
     "storybook": "^7.0.12",
     "storybook-addon-mock": "^4.0.0",
     "typescript": "^5.0.2",
