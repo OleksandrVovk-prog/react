@@ -1,4 +1,6 @@
+import { ReactElement } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Page from './layout/Page/Page';
 import PageProtected from './layout/Page/PageProtected';
 import Home from './pages/Home/Home';
@@ -8,7 +10,7 @@ import Login from './pages/Login/Login';
 import './i18n';
 import './styles/global.scss';
 
-function App(): JSX.Element {
+function App(): ReactElement {
   return (
     <BrowserRouter>
       <Routes>

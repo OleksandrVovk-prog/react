@@ -6,6 +6,7 @@ exports[`<Loader /> should render component 1`] = `
     <img
       alt="loader"
       class="appLoader"
+      data-testid="loader"
       src="loader.svg"
     />
   </div>

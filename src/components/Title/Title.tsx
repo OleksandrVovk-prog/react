@@ -1,3 +1,7 @@
+import { ReactElement } from 'react';
+
+import { testIdMainTitle } from '../../constants/TestId';
+
 import ITitle from './interfaces/ITitle';
 
 import styles from './sass/Title.module.scss';
@@ -5,9 +9,9 @@ import styles from './sass/Title.module.scss';
 /**
  * H1 title component
  */
-export default function Title({ text }: ITitle): JSX.Element {
+export default function Title({ text }: ITitle): ReactElement {
   return (
-    <h1 className={styles.appTitle} data-testid="main-title">
+    <h1 className={styles.appTitle} data-testid={testIdMainTitle}>
       {text}
     </h1>
   );

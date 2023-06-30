@@ -34,13 +34,14 @@ exports[`<Header /> should render component 1`] = `
       <span>
         <a
           class="linkButton"
+          data-testid="loginButton"
           href="/login"
         >
           Login
         </a>
       </span>
       <button
-        data-testid="toggle-language-button"
+        data-testid="toggleLanguageButton"
         type="button"
       >
         EN

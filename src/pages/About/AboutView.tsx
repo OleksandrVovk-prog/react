@@ -1,9 +1,10 @@
+import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 
 /**
  * About page view
  */
-function AboutView(): JSX.Element {
+function AboutView(): ReactElement {
   const { t } = useTranslation();
   return (
     <div>

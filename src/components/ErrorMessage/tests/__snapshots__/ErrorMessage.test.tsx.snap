@@ -4,6 +4,7 @@ exports[`<ErrorMessage /> should render component 1`] = `
 <DocumentFragment>
   <span
     class="errorMessage"
+    data-testid="errorMessage"
   >
     message
   </span>

@@ -1,6 +1,8 @@
+import { ReactElement } from 'react';
+
 import HomeView from './HomeView';
 
-function Home(): JSX.Element {
+function Home(): ReactElement {
   return (
     <HomeView />
   );

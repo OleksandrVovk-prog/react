@@ -4,7 +4,7 @@ exports[`<Title /> should render component 1`] = `
 <DocumentFragment>
   <h1
     class="appTitle"
-    data-testid="main-title"
+    data-testid="mainTitle"
   >
     Title
   </h1>

@@ -1,6 +1,10 @@
-import { mockedNavigateId } from './constants';
+import { testIdNavigate } from '../src/constants/TestId';
 
-jest.mock('react-router-dom', () => ({
+const mockNavigate = jest.fn();
+jest.doMock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  Navigate: () => <div data-testid={mockedNavigateId} />,
+  Navigate: () => <div data-testid={testIdNavigate} />,
+  useNavigate: () => mockNavigate,
 }));
+
+export default mockNavigate;

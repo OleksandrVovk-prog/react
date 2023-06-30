@@ -34,15 +34,17 @@ exports[`<PageProtected /> should render component 1`] = `
       <div
         class="toggleLanguage"
       >
-        <div>
-          <img
-            alt="loader"
-            class="appLoader"
-            src="loader.svg"
-          />
-        </div>
+        <span>
+          <a
+            class="linkButton"
+            data-testid="logoutButton"
+            href="/login"
+          >
+            Logout(John)
+          </a>
+        </span>
         <button
-          data-testid="toggle-language-button"
+          data-testid="toggleLanguageButton"
           type="button"
         >
           EN
@@ -51,7 +53,7 @@ exports[`<PageProtected /> should render component 1`] = `
     </header>
     <h1
       class="appTitle"
-      data-testid="main-title"
+      data-testid="mainTitle"
     >
       Home
     </h1>

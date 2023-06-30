@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
 import AUTHENTICATED_USER from '../tags/auth';
 
 const dummyApi = createApi({

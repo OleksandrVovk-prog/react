@@ -37,13 +37,14 @@ exports[`<Page /> should render component 1`] = `
         <span>
           <a
             class="linkButton"
+            data-testid="loginButton"
             href="/login"
           >
             Login
           </a>
         </span>
         <button
-          data-testid="toggle-language-button"
+          data-testid="toggleLanguageButton"
           type="button"
         >
           EN
@@ -52,7 +53,7 @@ exports[`<Page /> should render component 1`] = `
     </header>
     <h1
       class="appTitle"
-      data-testid="main-title"
+      data-testid="mainTitle"
     >
       Home
     </h1>

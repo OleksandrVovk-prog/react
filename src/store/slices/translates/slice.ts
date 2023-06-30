@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import i18n, { appLocales } from '../../../i18n';
-import ITranslates from './interfaces/ITranslates';
+
 import Statuses from '../../../constants/Statuses';
+import i18n, { appLocales } from '../../../i18n';
+
+import ITranslates from './interfaces/ITranslates';
 
 export const initialState: ITranslates = {
   locale: i18n.language,

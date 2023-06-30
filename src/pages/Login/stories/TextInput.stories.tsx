@@ -1,10 +1,12 @@
+import { ReactElement } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import TextInput from '../components/TextInput';
 import InputTypes from '../../../constants/InputTypes';
 import { loginSchema } from '../../../utils/validators';
+import TextInput from '../components/TextInput';
+
 import ILoginForm from '../interfaces/ILoginForm';
 import ITextInput from '../interfaces/ITextInput';
 
@@ -34,7 +36,7 @@ type Story = StoryObj<typeof TextInput>;
 
 function TextInputComponent({
   name, label, errors, type,
-}: ITextInput): JSX.Element {
+}: ITextInput): ReactElement {
   const { register } = useForm<ILoginForm>({
     resolver: yupResolver(loginSchema),
   });

@@ -24,63 +24,47 @@
     "yup": "^1.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.12",
-    "@storybook/addon-interactions": "^7.0.12",
-    "@storybook/addon-links": "^7.0.12",
-    "@storybook/blocks": "^7.0.12",
-    "@storybook/preset-create-react-app": "^7.0.12",
-    "@storybook/react": "^7.0.12",
-    "@storybook/react-webpack5": "^7.0.12",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@storybook/addon-essentials": "^7.0.20",
+    "@storybook/addon-interactions": "^7.0.20",
+    "@storybook/addon-links": "^7.0.20",
+    "@storybook/blocks": "^7.0.20",
+    "@storybook/preset-create-react-app": "^7.0.20",
+    "@storybook/react": "^7.0.20",
+    "@storybook/react-webpack5": "^7.0.20",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-redux": "^7.1.25",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "dotenv": "^16.0.3",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "husky": "^8.0.3",
+    "msw": "^1.2.2",
     "prop-types": "^15.8.1",
-    "storybook": "^7.0.12",
+    "storybook": "^7.0.20",
     "storybook-addon-mock": "^4.0.0",
-    "typescript": "^5.0.2",
+    "typescript": "5.0.4",
     "webpack": "^5.82.1"
-  },
-  "overrides": {
-    "typescript": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prestart": "tsc --noEmit && eslint . --max-warnings=0",
     "lint": "tsc --noEmit && eslint . --max-warnings=0",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook-build": "storybook build",
     "storybook-check": "./.scripts/storybook-check.js",
-    "tests-check": "./.scripts/tests-check.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "test": "react-scripts test",
+    "test-coverage": "react-scripts test --coverage",
+    "test-check": "./.scripts/test-check.js"
   },
   "browserslist": {
     "production": [
@@ -92,6 +76,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/mocks/**",
+      "!**/i18n/**",
+      "!**/interfaces/**",
+      "!**/stories/**",
+      "!**/store/**",
+      "!src/App.tsx",
+      "!src/index.tsx"
     ]
   }
 }

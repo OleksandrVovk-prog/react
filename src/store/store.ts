@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import auth from './slices/auth/slice';
 import jokes from './slices/jokes/slice';
 import translates from './slices/translates/slice';
