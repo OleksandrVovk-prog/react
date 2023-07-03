@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import styles from '../sass/TextInput.module.scss';
 
 import TextInput from '../components/TextInput';
 import InputTypes from '../../../constants/InputTypes';
@@ -21,7 +22,7 @@ const meta: Meta<typeof TextInput> = {
   },
   decorators: [
     (Story) => (
-      <div style={{ width: '250px' }}>
+      <div className={styles.storiesWrapper}>
         <Story />
       </div>
     ),
