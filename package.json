@@ -64,7 +64,8 @@
     "storybook-check": "./.scripts/storybook-check.js",
     "test": "react-scripts test",
     "test-coverage": "react-scripts test --coverage",
-    "test-check": "./.scripts/test-check.js"
+    "test-check": "./.scripts/test-check.js",
+    "test-ci": "react-scripts test --watchAll=false"
   },
   "browserslist": {
     "production": [
