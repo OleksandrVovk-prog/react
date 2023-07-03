@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import auth from './slices/auth/slice';
 import jokes from './slices/jokes/slice';
 import translates from './slices/translates/slice';
@@ -35,18 +36,23 @@ const persistedReducer = persistReducer(
   }),
 );
 
-export const store = configureStore({
-  reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  })
-    .concat([
-      jokesApi.middleware,
-      dummyApi.middleware,
-    ]),
-});
+export function makeStore(preloadedState = {}) {
+  return configureStore({
+    reducer: persistedReducer,
+    preloadedState: Object.keys(preloadedState).length ? preloadedState : undefined,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
+      .concat([
+        jokesApi.middleware,
+        dummyApi.middleware,
+      ]),
+  });
+}
+
+export const store = makeStore();
 
 setupListeners(store.dispatch);
 

@@ -1,22 +1,30 @@
+import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+
 import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
 import { toggleLocale } from '../../store/slices/translates/slice';
 import { selectLocale } from '../../store/slices/translates/selectors';
 import { selectUserId, selectCurrentUser } from '../../store/slices/auth/selectors';
 import { logout } from '../../store/slices/auth/slice';
-import Title from '../../components/Title/Title';
 import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
 import dummyAuth from '../../store/apis/dummy';
-
-import styles from './sass/Header.module.scss';
+import {
+  testIdHeader,
+  testIdLoginButton,
+  testIdLogoutButton,
+  testIdToggleLanguageButton,
+} from '../../constants/TestId';
+import Subtitle from '../../components/Subtitle/Subtitle';
 import LinkButton from '../../components/LinkButton/LinkButton';
 import Loader from '../../components/Loader/Loader';
+
+import styles from './sass/Header.module.scss';
 
 /**
  * Main layout header component
  */
-function Header(): JSX.Element {
+function Header(): ReactElement {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const id = useAppSelector(selectUserId);
@@ -30,8 +38,8 @@ function Header(): JSX.Element {
     dispatch(logout());
   };
   return (
-    <header className={styles.header}>
-      <Title text={t('common.welcomeMessage')} />
+    <header className={styles.header} data-testid={testIdHeader}>
+      <Subtitle text={t('common.welcomeMessage')} />
       <nav className={styles.headerNav}>
         <Link to="/" className={styles.headerNavLink}>
           { t('home.pageTitle') }
@@ -46,14 +54,23 @@ function Header(): JSX.Element {
         ) : (
           <span>
             {data?.id ? (
-              <LinkButton to="/login" onClick={onLogout} title={`${t('login.logout')}(${data.firstName})`} />
+              <LinkButton
+                to="/login"
+                onClick={onLogout}
+                title={`${t('login.logout')}(${data.firstName})`}
+                dataTestId={testIdLogoutButton}
+              />
             ) : (
-              <LinkButton to="/login" title={t('login.pageTitle')} />
+              <LinkButton
+                to="/login"
+                title={t('login.pageTitle')}
+                dataTestId={testIdLoginButton}
+              />
             )}
           </span>
         )}
         <button
-          data-testid="toggle-language-button"
+          data-testid={testIdToggleLanguageButton}
           type="button"
           onClick={() => dispatch(toggleLocale())}
         >

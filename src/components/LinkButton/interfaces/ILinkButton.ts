@@ -11,4 +11,8 @@ export default interface ILinkButton {
    * optional onClick event handler if you want to make some action.
    */
   onClick?: () => void,
+  /**
+   * optional data-testid attribute to identify the element in the tests.
+   */
+  dataTestId?: string,
 }

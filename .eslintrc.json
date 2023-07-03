@@ -38,7 +38,8 @@
       "exceptions": ["input", "**/*.stories.tsx"]
     }],
     "react/jsx-uses-react": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-    "react/react-in-jsx-scope": "off" // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
+    "react/react-in-jsx-scope": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"]}]
   },
   "overrides": [
     { //https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations
@@ -50,9 +51,10 @@
       }
     },
     {
-      "files": ["**/*.stories.tsx"],
+      "files": ["**/*.stories.*"],
       "rules": {
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "import/no-anonymous-default-export": "off"
       }
     }
   ]

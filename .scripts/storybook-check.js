@@ -1,15 +1,11 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
 const glob = require('glob');
-const componentsFolderName = 'components';
 const pagesFolderName = 'pages';
 const storiesFolderName = 'stories';
-const storiesFileMask = '**/*.stories.tsx';
-const srcPath = process.env.STORYBOOK_COMPONENTS_PATH;
-const excludedFilesString = `${storiesFileMask},${process.env.STORYBOOK_EXCLUDED_FILES}`;
+const srcPath = process.env.SRC_PATH;
+const excludedFilesString = process.env.EXCLUDED_FILES;
 
 function findTSXFiles(directory, excludedFiles = []) {
   return glob.sync('**/*.tsx', { cwd: directory, ignore: excludedFiles });
@@ -24,10 +20,6 @@ function filterStatelessComponents(files) {
       return pathArray.length === 2 && pathArray[0] === pathArray[1];
     }).map((file) => `${pagesFolderName}/${file}`);
   return files.filter((file) => !filteredFiles.includes(file));
-}
-
-function checkIsSubComponent(arrayPath) {
-  return arrayPath[arrayPath.length - 2] === componentsFolderName;
 }
 
 function checkIsStoryExists(file) {
@@ -64,7 +56,7 @@ if (srcPath && excludedFilesString) {
   }
   process.exit(0);
 } else {
-  throwError('Add STORYBOOK_COMPONENTS_PATH and STORYBOOK_EXCLUDED_FILES to .env file!');
+  throwError('Add SRC_PATH and STORYBOOK_EXCLUDED_FILES to .env file!');
 }
 
 

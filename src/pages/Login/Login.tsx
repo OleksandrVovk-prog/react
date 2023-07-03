@@ -1,14 +1,46 @@
-import { Navigate } from 'react-router-dom';
-import { useAppSelector } from '../../store/hooks/useApp';
-import LoginView from './LoginView';
-import { selectUserId } from '../../store/slices/auth/selectors';
+import { ReactElement } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-function Login(): JSX.Element {
+import { useAppSelector } from '../../store/hooks/useApp';
+import { selectUserId } from '../../store/slices/auth/selectors';
+import { loginSchema } from '../../utils/validators';
+import { useLoginMutation } from '../../store/slices/auth/apis/dummyAuth';
+import LoginView from './LoginView';
+
+import ILoginForm from './interfaces/ILoginForm';
+
+function Login(): ReactElement {
+  const navigate = useNavigate();
   const id = useAppSelector(selectUserId);
+  const [login, { isLoading, isError, error }] = useLoginMutation();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ILoginForm>({
+    resolver: yupResolver(loginSchema),
+  });
+  const onLoginSubmit = handleSubmit(async (credentials): Promise<void> => {
+    const response = await login(credentials);
+    if (!('error' in response)) {
+      reset();
+      navigate('/');
+    }
+  });
   return id ? (
     <Navigate to="/" />
   ) : (
-    <LoginView />
+    <LoginView
+      onLoginSubmit={onLoginSubmit}
+      errors={errors}
+      register={register}
+      isLoading={isLoading}
+      isError={isError}
+      error={error}
+    />
   );
 }
 

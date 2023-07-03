@@ -1,18 +1,18 @@
+import { ReactElement } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from '../../src/store/store';
-import authMock from '../mocks/auth';
 
-function Preview(Story): JSX.Element {
-  const mainState = store.getState();
-  store.replaceReducer((state = mainState) => ({
-    ...state,
-    auth: { ...state.auth, ...authMock }
-  }));
+import { persistor } from '../../src/store/store';
+import { makeStore, store } from '../../src/store/store';
+import auth from '../../src/mocks/auth';
+
+function Preview(Story): ReactElement {
+  const state = store.getState();
+  const mockStore = makeStore({ ...state, auth });
   return (
     <BrowserRouter>
-      <Provider store={store}>
+      <Provider store={mockStore}>
         <PersistGate loading={null} persistor={persistor}>
           <Story />
         </PersistGate>

@@ -1,6 +1,8 @@
+import { ReactElement } from 'react';
+
 import AboutView from './AboutView';
 
-function About(): JSX.Element {
+function About(): ReactElement {
   return (
     <AboutView />
   );
