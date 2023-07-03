@@ -1,6 +1,8 @@
 import { FieldError, UseFormRegister } from 'react-hook-form';
-import ILoginForm from './ILoginForm';
+
 import InputTypes from '../../../constants/InputTypes';
+
+import ILoginForm from './ILoginForm';
 
 interface ITextInput {
   /**

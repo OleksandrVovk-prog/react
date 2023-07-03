@@ -1,42 +1,33 @@
-import { useForm } from 'react-hook-form';
+import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router-dom';
+
+import useErrorMessage from '../../hooks/useErrorMessage';
+import InputTypes from '../../constants/InputTypes';
 import TextInput from './components/TextInput';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import { useLoginMutation } from '../../store/slices/auth/apis/dummyAuth';
-import useErrorMessage from '../../hooks/useErrorMessage';
-import { loginSchema } from '../../utils/validators';
-import InputTypes from '../../constants/InputTypes';
-
-import ILoginForm from './interfaces/ILoginForm';
 
 import styles from './sass/LoginView.module.scss';
+import ILoginView from './interfaces/ILoginView';
 
 /**
  * Login page view
  */
-function LoginView(): JSX.Element {
-  const navigate = useNavigate();
+function LoginView({
+  onLoginSubmit,
+  errors,
+  register,
+  isLoading,
+  isError,
+  error,
+}: ILoginView): ReactElement {
   const { t } = useTranslation();
-  const [login, { isLoading, isError, error }] = useLoginMutation();
   const errorMessage = useErrorMessage(error);
-  const {
-    register, handleSubmit, reset, formState: { errors },
-  } = useForm<ILoginForm>({
-    resolver: yupResolver(loginSchema),
-  });
-  const onSubmit = handleSubmit((credentials): void => {
-    login(credentials);
-    reset();
-    navigate('/');
-  });
   return (
     <div className={styles.loginForm}>
       <a href={`${process.env.REACT_APP_API}/users`} target="_blank" rel="noreferrer">
         { t('login.useLoginAndPasswordFromThisJson') }
       </a>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onLoginSubmit}>
         <TextInput
           name="username"
           label={t('login.userName')}

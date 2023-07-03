@@ -1,13 +1,15 @@
+import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import Loader from '../../components/Loader/Loader';
+
 import useFetchJokeQuery from '../../store/slices/jokes/apis/jokesRandom';
+import Loader from '../../components/Loader/Loader';
 
 import styles from './sass/HomeView.module.scss';
 
 /**
  * Home page view
  */
-function HomeView(): JSX.Element {
+function HomeView(): ReactElement {
   const { data, refetch, isFetching } = useFetchJokeQuery();
   const { t } = useTranslation();
   return (

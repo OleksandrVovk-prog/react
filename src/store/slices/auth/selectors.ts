@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+
 import type { RootState } from '../../types/TStore';
 
 import IAuthResponse from './interfaces/IAuthResponse';
