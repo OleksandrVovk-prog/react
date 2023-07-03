@@ -10,7 +10,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY package*.json /usr/src/app/
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN npm install -g serve
 
 # add app
