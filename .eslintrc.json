@@ -57,6 +57,13 @@
         "react/jsx-props-no-spreading": "off",
         "import/no-anonymous-default-export": "off"
       }
+    },
+    {
+      "files": [".storybook/**/*"],
+      "rules": {
+        "react/jsx-props-no-spreading": "off",
+        "import/no-anonymous-default-export": "off"
+      }
     }
   ]
 }
