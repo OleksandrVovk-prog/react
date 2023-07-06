@@ -9,8 +9,7 @@
     "react-app/jest",
     "airbnb",
     "airbnb-typescript",
-    "plugin:import/typescript",
-    "plugin:storybook/recommended"
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -53,13 +52,6 @@
     },
     {
       "files": ["**/*.stories.*"],
-      "rules": {
-        "react/jsx-props-no-spreading": "off",
-        "import/no-anonymous-default-export": "off"
-      }
-    },
-    {
-      "files": [".storybook/**/*"],
       "rules": {
         "react/jsx-props-no-spreading": "off",
         "import/no-anonymous-default-export": "off"

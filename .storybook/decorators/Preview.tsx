@@ -3,15 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-          import { persistor, makeStore, store } from '../../src/store/store';
+import { persistor, makeStore, store } from '../../src/store/store';
 import auth from '../../src/mocks/auth';
 
-
-
-
-
-
-function Preview(Story): ReactElement {
+function Preview(Story: React.ComponentType): ReactElement {
   const state = store.getState();
   const mockStore = makeStore({ ...state, auth });
   return (
