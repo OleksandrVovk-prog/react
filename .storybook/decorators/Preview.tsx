@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement, ComponentType } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, makeStore, store } from '../../src/store/store';
 import auth from '../../src/mocks/auth';
 
-function Preview(Story: React.ComponentType): ReactElement {
+function Preview(Story: ComponentType): ReactElement {
   const state = store.getState();
   const mockStore = makeStore({ ...state, auth });
   return (
