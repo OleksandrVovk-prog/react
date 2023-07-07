@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import render from '../../../../__tests__/test-utils';
+import { render } from '../../../../__tests__/test-utils';
 import {
   testIdLoader,
   testIdLoginButton,

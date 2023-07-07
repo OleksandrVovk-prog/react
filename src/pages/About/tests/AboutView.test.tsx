@@ -1,4 +1,4 @@
-import render from '../../../../__tests__/test-utils';
+import { render } from '../../../../__tests__/test-utils';
 import AboutView from '../AboutView';
 
 describe('<AboutView />', () => {

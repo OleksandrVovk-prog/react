@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { render } from '@testing-library/react';
+import { render as rtlRender, renderHook as rtlRenderHook } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -15,7 +15,17 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   store?: AppStore
 }
 
-export default function renderWithProviders(
+function Wrapper({ children, store }: PropsWithChildren<{ store: AppStore }>): ReactElement {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        {children}
+      </BrowserRouter>
+    </Provider>
+  );
+}
+
+export function render(
   ui: React.ReactElement,
   {
     preloadedState,
@@ -23,15 +33,31 @@ export default function renderWithProviders(
     ...renderOptions
   }: ExtendedRenderOptions = {},
 ) {
-  function Wrapper({ children }: PropsWithChildren<{}>): ReactElement {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          {children}
-        </BrowserRouter>
-      </Provider>
-    );
-  }
+  return {
+    store,
+    ...rtlRender(
+      ui,
+      {
+        wrapper: ({ children }) => <Wrapper store={store}>{children}</Wrapper>,
+        ...renderOptions,
+      },
+    ),
+  };
+}
 
-  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
+export function renderHook<Response, Params>(
+  hook: (args: Params) => Response,
+  {
+    preloadedState,
+    store = makeStore(preloadedState),
+    ...renderOptions
+  }: ExtendedRenderOptions = {},
+) {
+  return rtlRenderHook(
+    hook,
+    {
+      wrapper: ({ children }) => <Wrapper store={store}>{children}</Wrapper>,
+      ...renderOptions,
+    },
+  );
 }

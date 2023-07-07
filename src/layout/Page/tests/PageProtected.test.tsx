@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import render from '../../../../__tests__/test-utils';
+import { render } from '../../../../__tests__/test-utils';
 import { initServer } from '../../../../__tests__/mswServer';
 import PageProtected from '../PageProtected';
 import { testIdLoader, testIdNavigate } from '../../../constants/TestId';

@@ -2,27 +2,30 @@
 
 require('dotenv').config();
 const glob = require('glob');
-const pagesFolderName = 'pages';
 const testsFolderName = 'tests';
 const srcPath = process.env.SRC_PATH;
 const excludedFilesString = process.env.EXCLUDED_FILES;
+const componentsExtension = '.tsx';
+const logicFilesExtension = '.ts';
 
-function findTSXFiles(directory, excludedFiles = []) {
-  return glob.sync('**/*.tsx', { cwd: directory, ignore: excludedFiles });
+function findFilesByExtension(directory, extension, excludedFiles = []) {
+  return glob.sync(`**/*${extension}`, { cwd: directory, ignore: excludedFiles });
 }
 
-function checkIsTestExists(file) {
+function checkIsTestExists(file, extension) {
   const arrayPath = file.split('/');
   const fileName = arrayPath[arrayPath.length - 1];
-  const testsFile = `${testsFolderName}/${fileName.replace('.tsx', '.test.tsx')}`;
-  const parentFolder = `${srcPath}/${arrayPath.slice(0, 2).join('/')}`;
+  const testsFile = `${testsFolderName}/${fileName.replace(extension, `.test${extension}`)}`;
+  const isOneLevelFolder = arrayPath.length === 2;
+  const sliceEnd = isOneLevelFolder ? -1 : 2;
+  const parentFolder = `${srcPath}/${arrayPath.slice(0, sliceEnd).join('/')}`;
   return glob.sync(`**/${testsFile}`, { cwd: parentFolder }).length > 0;
 }
 
-function checkFiles(files) {
+function checkFiles(files, extension) {
   const missingTests = [];
   files.forEach((file) => {
-    const isTestExists = checkIsTestExists(file);
+    const isTestExists = checkIsTestExists(file, extension);
     if (!isTestExists) {
       missingTests.push(`${srcPath}/${file}`);
     }
@@ -37,10 +40,16 @@ function throwError(message) {
 
 if (srcPath && excludedFilesString) {
   const excludedFiles = excludedFilesString.split(',');
-  const tsxFiles = findTSXFiles(srcPath, excludedFiles);
-  const missingTests = checkFiles(tsxFiles);
+  const tsxFiles = findFilesByExtension(srcPath, componentsExtension, excludedFiles);
+  const tsFiles = findFilesByExtension(srcPath, logicFilesExtension, excludedFiles);
+  // const missingLogicTests = checkFiles(tsFiles, logicFilesExtension);
+  const missingComponentsTests = checkFiles(tsxFiles, componentsExtension);
+  const missingTests = [
+    ...missingComponentsTests,
+    // ...missingLogicTests
+  ];
   if (missingTests.length > 0) {
-    throwError(`Missing tests for the following components:\n - ${missingTests.join('\n - ')}`);
+    throwError(`Missing tests for the following files:\n - ${missingTests.join('\n - ')}`);
   }
   process.exit(0);
 } else {

@@ -1,5 +1,5 @@
 import { screen, waitFor } from '@testing-library/react';
-import render from '../../../../__tests__/test-utils';
+import { render } from '../../../../__tests__/test-utils';
 import { initServer } from '../../../../__tests__/mswServer';
 import joke from '../../../mocks/joke';
 import { testIdLoader } from '../../../constants/TestId';
