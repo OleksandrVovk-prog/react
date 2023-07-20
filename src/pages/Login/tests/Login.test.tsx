@@ -3,7 +3,7 @@ import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { render } from '../../../../__tests__/test-utils';
 import { initServer } from '../../../../__tests__/mswServer';
 import { testIdErrorMessage, testIdNavigate } from '../../../constants/TestId';
-import { userErrorCredentials } from '../../../mocks/user';
+import { userErrorCredentials, userCredentials } from '../../../mocks/user';
 import auth from '../../../mocks/auth';
 import Login from '../Login';
 
@@ -35,8 +35,8 @@ describe('<Login />', () => {
         expect(await screen.findByTestId(testIdErrorMessage)).toBeInTheDocument();
       },
     );
-    fireEvent.change(nameInput, { target: { value: 'username' } });
-    fireEvent.change(passwordInput, { target: { value: 'password' } });
+    fireEvent.change(nameInput, { target: { value: userCredentials.username } });
+    fireEvent.change(passwordInput, { target: { value: userCredentials.password } });
     fireEvent.click(submitButton);
     await waitFor(
       async () => {

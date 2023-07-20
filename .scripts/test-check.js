@@ -7,19 +7,29 @@ const srcPath = process.env.SRC_PATH;
 const excludedFilesString = process.env.EXCLUDED_FILES;
 const componentsExtension = '.tsx';
 const logicFilesExtension = '.ts';
+const sliceFolderName = 'slices';
 
 function findFilesByExtension(directory, extension, excludedFiles = []) {
   return glob.sync(`**/*${extension}`, { cwd: directory, ignore: excludedFiles });
 }
 
+function getEndOfPath(arrayPath) {
+  let endOfPath = 2;
+  if(arrayPath.includes(sliceFolderName)) {
+    endOfPath = 3;
+  } else if (arrayPath.length === 2) {
+    endOfPath = -1;
+  }
+  return endOfPath;
+}
+
 function checkIsTestExists(file, extension) {
-  const arrayPath = file.split('/');
-  const fileName = arrayPath[arrayPath.length - 1];
-  const testsFile = `${testsFolderName}/${fileName.replace(extension, `.test${extension}`)}`;
-  const isOneLevelFolder = arrayPath.length === 2;
-  const sliceEnd = isOneLevelFolder ? -1 : 2;
-  const parentFolder = `${srcPath}/${arrayPath.slice(0, sliceEnd).join('/')}`;
-  return glob.sync(`**/${testsFile}`, { cwd: parentFolder }).length > 0;
+    const arrayPath = file.split('/');
+    const fileName = arrayPath[arrayPath.length - 1];
+    const testsFile = `${testsFolderName}/${fileName.replace(extension, `.test${extension}`)}`;
+    const isOneLevelFolder = arrayPath.length === 2;
+    const parentFolder = `${srcPath}/${arrayPath.slice(0, getEndOfPath(arrayPath)).join('/')}`;
+    return glob.sync(`**/${testsFile}`, { cwd: parentFolder }).length > 0;
 }
 
 function checkFiles(files, extension) {
@@ -42,11 +52,11 @@ if (srcPath && excludedFilesString) {
   const excludedFiles = excludedFilesString.split(',');
   const tsxFiles = findFilesByExtension(srcPath, componentsExtension, excludedFiles);
   const tsFiles = findFilesByExtension(srcPath, logicFilesExtension, excludedFiles);
-  // const missingLogicTests = checkFiles(tsFiles, logicFilesExtension);
+  const missingLogicTests = checkFiles(tsFiles, logicFilesExtension);
   const missingComponentsTests = checkFiles(tsxFiles, componentsExtension);
   const missingTests = [
     ...missingComponentsTests,
-    // ...missingLogicTests
+    ...missingLogicTests
   ];
   if (missingTests.length > 0) {
     throwError(`Missing tests for the following files:\n - ${missingTests.join('\n - ')}`);

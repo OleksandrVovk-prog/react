@@ -9,6 +9,11 @@ export const userErrorCredentials = {
   password: 'errorPassword',
 };
 
+export const userCredentials = {
+  username: 'username',
+  password: 'password',
+};
+
 export const userError = {
   message: 'Invalid credentials',
 };

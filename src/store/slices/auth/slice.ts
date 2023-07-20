@@ -4,7 +4,7 @@ import dummyAuthApi from './apis/dummyAuth';
 
 import IAuthResponse from './interfaces/IAuthResponse';
 
-const initialState: IAuthResponse = {
+export const initialState: IAuthResponse = {
   id: undefined,
   token: undefined,
 };

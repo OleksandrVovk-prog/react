@@ -5,7 +5,7 @@ import Statuses from '../../../constants/Statuses';
 import IJokes from './interfaces/IJokes';
 import IJokeResponse from './interfaces/IJokeResponse';
 
-const initialState: IJokes = {
+export const initialState: IJokes = {
   status: Statuses.idle,
   joke: undefined,
 };
