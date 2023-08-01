@@ -3,7 +3,6 @@ import { ReactElement } from 'react';
 import { testIdMainTitle } from '../../constants/TestId';
 
 import ITitle from './interfaces/ITitle';
-
 import styles from './sass/Title.module.scss';
 
 /**

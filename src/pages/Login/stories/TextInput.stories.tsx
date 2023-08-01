@@ -1,15 +1,15 @@
 import { ReactElement } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import styles from '../sass/TextInput.module.scss';
 
+import styles from '../sass/TextInput.module.scss';
 import InputTypes from '../../../constants/InputTypes';
 import { loginSchema } from '../../../utils/validators';
 import TextInput from '../components/TextInput';
-
 import ILoginForm from '../interfaces/ILoginForm';
 import ITextInput from '../interfaces/ITextInput';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof TextInput> = {
   title: 'Pages/Login/TextInput',

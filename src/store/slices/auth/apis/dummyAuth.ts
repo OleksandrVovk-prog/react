@@ -1,6 +1,5 @@
 import dummyApi from '../../../apis/dummy';
 import AUTHENTICATED_USER from '../../../tags/auth';
-
 import IAuthResponse from '../interfaces/IAuthResponse';
 import IAuthRequest from '../interfaces/IAuthRequest';
 

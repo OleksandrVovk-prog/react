@@ -1,8 +1,8 @@
 import { waitFor } from '@testing-library/react';
+
 import { renderHook } from '../../../../../__tests__/test-utils';
 import { useLoginMutation, useFetchUserQuery } from '../apis/dummyAuth';
 import { initServer } from '../../../../../__tests__/mswServer';
-
 import user, { userErrorCredentials, userCredentials } from '../../../../mocks/user';
 import { selectCurrentUser } from '../selectors';
 

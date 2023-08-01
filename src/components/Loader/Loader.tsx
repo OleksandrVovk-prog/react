@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
 
 import { testIdLoader } from '../../constants/TestId';
+import loader from '../../assets/images/loader.svg';
 
 import styles from './sass/Loader.module.scss';
-import loader from '../../assets/images/loader.svg';
 
 /**
  * Primary UI component for displaying a loader in the project.

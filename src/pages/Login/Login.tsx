@@ -7,8 +7,8 @@ import { useAppSelector } from '../../store/hooks/useApp';
 import { selectUserId } from '../../store/slices/auth/selectors';
 import { loginSchema } from '../../utils/validators';
 import { useLoginMutation } from '../../store/slices/auth/apis/dummyAuth';
-import LoginView from './LoginView';
 
+import LoginView from './LoginView';
 import ILoginForm from './interfaces/ILoginForm';
 
 function Login(): ReactElement {

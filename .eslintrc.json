@@ -37,15 +37,31 @@
     "react/jsx-props-no-spreading": ["error", {
       "exceptions": ["input", "**/*.stories.tsx"]
     }],
-    "react/jsx-uses-react": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-    "react/react-in-jsx-scope": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"]}]
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"]}],
+    // Додати правило для import/order
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true
+      }
+    ]
   },
   "overrides": [
-    { //https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations
-      "files": [
-        "src/**/**/slice.ts"
-      ],
+    {
+      "files": ["src/**/**/slice.ts"],
       "rules": {
         "no-param-reassign": ["error", { "props": false }]
       }

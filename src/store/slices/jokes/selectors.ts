@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { RootState } from '../../types/TStore';
-
 import IJoke from './interfaces/IJokes';
+
+import type { RootState } from '../../types/TStore';
 
 const selectJokes = (state: RootState): IJoke => state.jokes;
 export const selectStatus = createSelector(selectJokes, (jokes) => jokes.status);

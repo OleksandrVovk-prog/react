@@ -3,12 +3,13 @@ import { render as rtlRender, renderHook as rtlRenderHook } from '@testing-libra
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import { makeStore } from '../src/store/store';
+
+import './mocks';
+
 import type { RenderOptions } from '@testing-library/react';
 import type { PreloadedState } from '@reduxjs/toolkit';
-
-import { makeStore } from '../src/store/store';
 import type { AppStore, RootState } from '../src/store/types/TStore';
-import './mocks';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>,

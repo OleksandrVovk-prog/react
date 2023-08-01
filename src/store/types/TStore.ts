@@ -1,4 +1,5 @@
 import { Action, ThunkAction, EnhancedStore } from '@reduxjs/toolkit';
+
 import { store } from '../store';
 
 export type AppDispatch = typeof store.dispatch;

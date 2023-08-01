@@ -1,9 +1,7 @@
 import { useId, ReactElement } from 'react';
 
 import ErrorMessage from '../../../components/ErrorMessage/ErrorMessage';
-
 import ITextInput from '../interfaces/ITextInput';
-
 import styles from '../sass/TextInput.module.scss';
 
 /**
