@@ -2,12 +2,11 @@ import { ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import type { Meta, StoryObj } from '@storybook/react';
 import { loginSchema } from '../../../utils/validators';
 import LoginView from '../LoginView';
 import ILoginView from '../interfaces/ILoginView';
 import ILoginForm from '../interfaces/ILoginForm';
-
-import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof LoginView> = {
   title: 'Pages/Login/LoginView',
