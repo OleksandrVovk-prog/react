@@ -19,7 +19,7 @@ function TextInput({
         <span>{label}</span>
         <input id={`${id}-${name}`} type={type} {...register(name)} />
       </label>
-      {errors && <ErrorMessage message={errors.message} />}
+      {errors ? <ErrorMessage message={errors.message} /> : null}
     </>
   );
 }

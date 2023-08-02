@@ -43,7 +43,7 @@ function LoginView({
         />
         <input type="submit" disabled={isLoading || Object.keys(errors).length > 0} />
       </form>
-      {isError && <ErrorMessage message={errorMessage} />}
+      {isError ? <ErrorMessage message={errorMessage} /> : null}
     </div>
   );
 }
