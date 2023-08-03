@@ -22,7 +22,8 @@
   },
   "plugins": [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "require-explicit-generics"
   ],
   "rules": {
     "radix": "off",
@@ -39,7 +40,12 @@
     }],
     "react/jsx-uses-react": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
     "react/react-in-jsx-scope": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"]}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"]}],
+     "require-explicit-generics/require-explicit-generics": [
+        "error",
+        { "builder.query": 2 }
+      ]
+    
   },
   "overrides": [
     { //https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations
