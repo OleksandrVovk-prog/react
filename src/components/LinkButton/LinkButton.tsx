@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
 import ILinkButton from './interfaces/ILinkButton';
+
 import styles from './sass/LinkButton.module.scss';
 
 /**

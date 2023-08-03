@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
-import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-
+import { useForm } from 'react-hook-form';
+import { ReactElement } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { loginSchema } from '../../../utils/validators';
 import LoginView from '../LoginView';
 import ILoginView from '../interfaces/ILoginView';

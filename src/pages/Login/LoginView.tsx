@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import useErrorMessage from '../../hooks/useErrorMessage';
 import InputTypes from '../../constants/InputTypes';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-
-import TextInput from './components/TextInput';
-import styles from './sass/LoginView.module.scss';
 import ILoginView from './interfaces/ILoginView';
+import TextInput from './components/TextInput';
+
+import styles from './sass/LoginView.module.scss';
 
 /**
  * Login page view

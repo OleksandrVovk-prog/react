@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
-import i18n from '../src/i18n';
 
+import i18n from '../src/i18n';
 import PreviewDecorator from './decorators/Preview';
 
 const preview: Preview = {
