@@ -44,8 +44,9 @@
      "require-explicit-generics/require-explicit-generics": [
         "error",
         { "builder.query": 2 }
-      ]
+      ],
     
+    "react/jsx-no-leaked-render": "error" 
   },
   "overrides": [
     { //https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations
