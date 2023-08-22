@@ -43,7 +43,7 @@
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"]}],
      "require-explicit-generics/require-explicit-generics": [
         "error",
-        { "builder.query": 2 }
+        ["builder.query", "builder.mutation"]
       ],
     
     "react/jsx-no-leaked-render": "error" 
