@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import Statuses from '../../../constants/Statuses';
-
 import IJokes from './interfaces/IJokes';
 import IJokeResponse from './interfaces/IJokeResponse';
 

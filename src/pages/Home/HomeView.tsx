@@ -1,11 +1,10 @@
 import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import useFetchJokeQuery from '../../store/slices/jokes/apis/jokesRandom';
 import Loader from '../../components/Loader/Loader';
+import useFetchJokeQuery from '../../store/slices/jokes/apis/jokesRandom';
 
 import styles from './sass/HomeView.module.scss';
-
 /**
  * Home page view
  */

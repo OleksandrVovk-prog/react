@@ -6,7 +6,6 @@ import PageProtected from './layout/Page/PageProtected';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Login from './pages/Login/Login';
-
 import './i18n';
 import './styles/global.scss';
 

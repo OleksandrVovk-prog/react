@@ -1,4 +1,5 @@
 import { waitFor } from '@testing-library/react';
+
 import { renderHook } from '../../../../../__tests__/test-utils';
 import useFetchJokeQuery from '../apis/jokesRandom';
 import { initServer } from '../../../../../__tests__/mswServer';

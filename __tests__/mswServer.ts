@@ -1,5 +1,6 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
+
 import user, { userErrorCredentials, userError } from '../src/mocks/user';
 import joke from '../src/mocks/joke';
 import { OK, BAD_REQUEST } from '../src/constants/StatusCodes';
