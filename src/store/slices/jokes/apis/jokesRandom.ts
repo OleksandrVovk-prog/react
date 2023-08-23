@@ -1,5 +1,5 @@
 import jokesApi from '../../../apis/jokes';
-import IJokeResponse from '../interfaces/IJokeResponse';
+import type IJokeResponse from '../interfaces/IJokeResponse';
 
 const randomJokesApi = jokesApi.injectEndpoints({
   endpoints: (builder) => ({

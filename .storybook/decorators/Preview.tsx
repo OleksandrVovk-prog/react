@@ -1,4 +1,4 @@
-import { ReactElement, ComponentType } from 'react';
+import type { ReactElement, ComponentType } from 'react';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';

@@ -1,13 +1,13 @@
 import { useForm } from 'react-hook-form';
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import InputTypes from '../../../constants/InputTypes';
 import { loginSchema } from '../../../utils/validators';
 import TextInput from '../components/TextInput';
-import ILoginForm from '../interfaces/ILoginForm';
-import ITextInput from '../interfaces/ITextInput';
+import type ILoginForm from '../interfaces/ILoginForm';
+import type ITextInput from '../interfaces/ITextInput';
 
 import styles from '../sass/TextInput.module.scss';
 

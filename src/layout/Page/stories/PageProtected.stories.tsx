@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import PageProtected from '../PageProtected';
-import IPageProtected from '../interfaces/IPageProtected';
+import type IPageProtected from '../interfaces/IPageProtected';
 
 const meta: Meta<typeof PageProtected> = {
   title: 'Layout/PageProtected',

@@ -1,5 +1,5 @@
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
-import { SerializedError } from '@reduxjs/toolkit';
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import type { SerializedError } from '@reduxjs/toolkit';
 
 import { renderHook } from '../../../__tests__/test-utils';
 import useErrorMessage from '../useErrorMessage';

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -8,7 +8,7 @@ import { selectUserId } from '../../store/slices/auth/selectors';
 import { loginSchema } from '../../utils/validators';
 import { useLoginMutation } from '../../store/slices/auth/apis/dummyAuth';
 import LoginView from './LoginView';
-import ILoginForm from './interfaces/ILoginForm';
+import type ILoginForm from './interfaces/ILoginForm';
 
 function Login(): ReactElement {
   const navigate = useNavigate();

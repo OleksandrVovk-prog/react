@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import dummyAuthApi from './apis/dummyAuth';
-import IAuthResponse from './interfaces/IAuthResponse';
+import type IAuthResponse from './interfaces/IAuthResponse';
 
 export const initialState: IAuthResponse = {
   id: undefined,

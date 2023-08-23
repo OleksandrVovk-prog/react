@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { testIdSubtitle } from '../../constants/TestId';
-import ISubtitle from './interfaces/ISubtitle';
+import type ISubtitle from './interfaces/ISubtitle';
 
 import styles from './sass/Subtitle.module.scss';
 /**

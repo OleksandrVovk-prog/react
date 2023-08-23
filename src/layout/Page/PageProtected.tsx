@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { useAppSelector } from '../../store/hooks/useApp';
 import { selectUserId } from '../../store/slices/auth/selectors';
 import Page from './Page';
-import IPageProtected from './interfaces/IPageProtected';
+import type IPageProtected from './interfaces/IPageProtected';
 
 /**
  * Protected page layout

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
-import { SerializedError } from '@reduxjs/toolkit';
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import type { SerializedError } from '@reduxjs/toolkit';
 
 function useErrorMessage(error: FetchBaseQueryError | SerializedError | undefined): string {
   const { t } = useTranslation();

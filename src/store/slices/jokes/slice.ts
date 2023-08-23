@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import Statuses from '../../../constants/Statuses';
-import IJokes from './interfaces/IJokes';
-import IJokeResponse from './interfaces/IJokeResponse';
+import type IJokes from './interfaces/IJokes';
+import type IJokeResponse from './interfaces/IJokeResponse';
 
 export const initialState: IJokes = {
   status: Statuses.idle,
