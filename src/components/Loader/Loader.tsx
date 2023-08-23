@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { testIdLoader } from '../../constants/TestId';
 import loader from '../../assets/images/loader.svg';

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Page from './layout/Page/Page';

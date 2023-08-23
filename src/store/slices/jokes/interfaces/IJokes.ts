@@ -1,4 +1,4 @@
-import Statuses from '../../../../constants/Statuses';
+import type Statuses from '../../../../constants/Statuses';
 
 export default interface JokesState {
   status: Statuses;

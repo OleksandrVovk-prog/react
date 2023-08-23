@@ -1,5 +1,5 @@
-import { RootState } from '../../types/TStore';
-import ITranslate from './interfaces/ITranslates';
+import type { RootState } from '../../types/TStore';
+import type ITranslate from './interfaces/ITranslates';
 
 export const selectLocale = (state: RootState): ITranslate['locale'] => state.translates.locale;
 

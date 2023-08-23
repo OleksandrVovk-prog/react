@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { testIdMainTitle } from '../../constants/TestId';
-import ITitle from './interfaces/ITitle';
+import type ITitle from './interfaces/ITitle';
 
 import styles from './sass/Title.module.scss';
 /**

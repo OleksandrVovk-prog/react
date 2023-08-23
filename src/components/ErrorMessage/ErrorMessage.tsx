@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { testIdErrorMessage } from '../../constants/TestId';
-import IErrorMessage from './interfaces/IErrorMessage';
+import type IErrorMessage from './interfaces/IErrorMessage';
 
 import styles from './sass/ErrorMessage.module.scss';
 /**
