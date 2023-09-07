@@ -1,10 +1,10 @@
-import { useAppDispatch } from '../useApp';
+import { useAppDispatch, useAppSelector } from '../useApp';
 
 describe('useApp', () => {
   test('useAppDispatch is defined', () => {
     expect(useAppDispatch).toBeDefined();
   });
   test('useAppSelector is defined', () => {
-    expect(useAppDispatch).toBeDefined();
+    expect(useAppSelector).toBeDefined();
   });
 });
