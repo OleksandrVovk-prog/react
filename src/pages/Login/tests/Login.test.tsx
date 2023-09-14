@@ -1,10 +1,10 @@
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { render } from '../../../../__tests__/test-utils';
 import { initServer } from '../../../../__tests__/mswServer';
+import { render } from '../../../../__tests__/test-utils';
 import { testIdErrorMessage, testIdNavigate } from '../../../constants/TestId';
-import { userErrorCredentials, userCredentials } from '../../../mocks/user';
 import auth from '../../../mocks/auth';
+import { userCredentials, userErrorCredentials } from '../../../mocks/user';
 import Login from '../Login';
 
 initServer();

@@ -1,6 +1,6 @@
-import type { ReactElement } from 'react';
-
 import HomeView from './HomeView';
+
+import type { ReactElement } from 'react';
 
 function Home(): ReactElement {
   return (

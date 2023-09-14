@@ -1,6 +1,6 @@
-import type { ReactElement } from 'react';
-
 import AboutView from './AboutView';
+
+import type { ReactElement } from 'react';
 
 function About(): ReactElement {
   return (

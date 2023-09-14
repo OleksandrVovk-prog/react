@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type IAuthResponse from './interfaces/IAuthResponse';
 import type { RootState } from '../../types/TStore';
+import type IAuthResponse from './interfaces/IAuthResponse';
 
 const selectAuth = (state: RootState): IAuthResponse => state.auth;
 

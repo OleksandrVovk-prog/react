@@ -1,9 +1,9 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { render } from '../../../../__tests__/test-utils';
 import { initServer } from '../../../../__tests__/mswServer';
-import joke from '../../../mocks/joke';
+import { render } from '../../../../__tests__/test-utils';
 import { testIdLoader } from '../../../constants/TestId';
+import joke from '../../../mocks/joke';
 import HomeView from '../HomeView';
 
 describe('<HomeView />', () => {

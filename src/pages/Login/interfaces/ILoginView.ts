@@ -1,7 +1,6 @@
-import type { FieldErrors, UseFormRegister } from 'react-hook-form';
-import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import type { SerializedError } from '@reduxjs/toolkit';
-
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import type { FieldErrors, UseFormRegister } from 'react-hook-form';
 import type ILoginForm from './ILoginForm';
 
 interface ILoginView {

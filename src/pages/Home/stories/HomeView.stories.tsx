@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import HomeView from '../HomeView';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof HomeView> = {
   title: 'Pages/Home/HomeView',

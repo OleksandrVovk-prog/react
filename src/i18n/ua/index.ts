@@ -1,6 +1,6 @@
+import about from './about';
 import common from './common';
 import home from './home';
-import about from './about';
 import login from './login';
 
 export default {

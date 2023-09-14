@@ -1,4 +1,4 @@
-import reducer, { logout, initialState } from '../slice';
+import reducer, { initialState, logout } from '../slice';
 
 describe('auth slice', () => {
   test('should return the initial state', () => {

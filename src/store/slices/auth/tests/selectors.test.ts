@@ -1,8 +1,8 @@
 import { renderHook } from '../../../../../__tests__/test-utils';
-import { useAppSelector } from '../../../hooks/useApp';
-import { selectUserId, selectUserToken, selectCurrentUser } from '../selectors';
 import auth from '../../../../mocks/auth';
 import user from '../../../../mocks/user';
+import { useAppSelector } from '../../../hooks/useApp';
+import { selectCurrentUser, selectUserId, selectUserToken } from '../selectors';
 
 describe('auth selectors', () => {
   test('selectUserId if user absent id should be undefined', () => {

@@ -1,12 +1,13 @@
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import type { ReactElement } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import { loginSchema } from '../../../utils/validators';
 import LoginView from '../LoginView';
-import type ILoginView from '../interfaces/ILoginView';
+
+import type { Meta, StoryObj } from '@storybook/react';
+import type { ReactElement } from 'react';
 import type ILoginForm from '../interfaces/ILoginForm';
+import type ILoginView from '../interfaces/ILoginView';
 
 const meta: Meta<typeof LoginView> = {
   title: 'Pages/Login/LoginView',

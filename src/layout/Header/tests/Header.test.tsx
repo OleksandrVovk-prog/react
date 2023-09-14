@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
+import { initServer } from '../../../../__tests__/mswServer';
 import { render } from '../../../../__tests__/test-utils';
 import {
   testIdLoader,
@@ -9,7 +10,6 @@ import {
 } from '../../../constants/TestId';
 import auth from '../../../mocks/auth';
 import Header from '../Header';
-import { initServer } from '../../../../__tests__/mswServer';
 
 initServer();
 

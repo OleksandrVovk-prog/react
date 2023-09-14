@@ -1,9 +1,10 @@
-import type { ReactElement } from 'react';
-
 import { testIdMainTitle } from '../../constants/TestId';
+
+import type { ReactElement } from 'react';
 import type ITitle from './interfaces/ITitle';
 
 import styles from './sass/Title.module.scss';
+
 /**
  * H1 title component
  */

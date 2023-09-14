@@ -1,14 +1,16 @@
-import type { PropsWithChildren, ReactElement } from 'react';
+import './mocks';
+
 import React from 'react';
-import { render as rtlRender, renderHook as rtlRenderHook } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import type { RenderOptions } from '@testing-library/react';
-import type { PreloadedState } from '@reduxjs/toolkit';
+import { render as rtlRender, renderHook as rtlRenderHook } from '@testing-library/react';
 
 import { makeStore } from '../src/store/store';
+
+import type { PreloadedState } from '@reduxjs/toolkit';
+import type { RenderOptions } from '@testing-library/react';
+import type { PropsWithChildren, ReactElement } from 'react';
 import type { AppStore, RootState } from '../src/store/types/TStore';
-import './mocks';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>,
