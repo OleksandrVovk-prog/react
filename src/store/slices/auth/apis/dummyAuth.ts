@@ -1,7 +1,8 @@
 import dummyApi from '../../../apis/dummy';
 import AUTHENTICATED_USER from '../../../tags/auth';
-import type IAuthResponse from '../interfaces/IAuthResponse';
+
 import type IAuthRequest from '../interfaces/IAuthRequest';
+import type IAuthResponse from '../interfaces/IAuthResponse';
 
 const dummyAuthApi = dummyApi.injectEndpoints({
   endpoints: (builder) => ({

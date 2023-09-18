@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../../hooks/useApp';
 import { renderHook } from '../../../../../__tests__/test-utils';
-import { selectStatus, selectLocale } from '../selectors';
-import { initialState } from '../slice';
 import Statuses from '../../../../constants/Statuses';
+import { useAppSelector } from '../../../hooks/useApp';
+import { selectLocale, selectStatus } from '../selectors';
+import { initialState } from '../slice';
 
 describe('translates selectors', () => {
   test(`selectStatus should return translates ${Statuses.idle} status by default`, () => {

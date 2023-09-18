@@ -23,7 +23,8 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "require-explicit-generics"
+    "require-explicit-generics",
+    "simple-import-sort"
   ],
   "rules": {
     "jsx-a11y/label-has-for": "off",
@@ -36,19 +37,17 @@
         "error",
         ["builder.query", "builder.mutation"]
       ],
-    "import/order": ["error", {
-      "groups": ["external", ["internal", "parent", "sibling", "index"], "unknown"],
-      "pathGroups": [
-        {
-          "pattern": "*.+(css|sass|less|scss|pcss|styl)*(?*)",
-          "patternOptions": {
-            "matchBase": true
-          },
-          "group": "unknown"
-        }
-      ],
-      "newlines-between": "always"
+    "simple-import-sort/imports": ["error", {
+      "groups": [
+        ["^\\u0000"], // side effect imports
+        ["^react$", "^react-native$", "^react", "^@?\\w"], // libraries order
+        ["^\\.\\.(?!/?$)", "^\\.\\./?$", // parent
+          "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"], // other reletions
+        ["^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"], // types
+        ["^.+assets.+\\..+$"], // assets
+        ["^.+\\.s?css$"]] // style
     }],
+    "import/order": "off", // disable default import order rule to use simple-import-sort
     "radix": "off",
     "react/jsx-props-no-spreading": ["error", {
       "exceptions": ["input", "**/*.stories.tsx"]

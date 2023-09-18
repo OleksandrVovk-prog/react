@@ -1,10 +1,10 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { render } from '../../../../__tests__/test-utils';
 import { initServer } from '../../../../__tests__/mswServer';
-import PageProtected from '../PageProtected';
+import { render } from '../../../../__tests__/test-utils';
 import { testIdLoader, testIdNavigate } from '../../../constants/TestId';
 import auth from '../../../mocks/auth';
+import PageProtected from '../PageProtected';
 
 initServer();
 describe('<PageProtected />', () => {

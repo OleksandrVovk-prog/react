@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
-import user, { userErrorCredentials, userError } from '../src/mocks/user';
+import { BAD_REQUEST, OK } from '../src/constants/StatusCodes';
 import joke from '../src/mocks/joke';
-import { OK, BAD_REQUEST } from '../src/constants/StatusCodes';
+import user, { userError, userErrorCredentials } from '../src/mocks/user';
 
 export const server = setupServer(
   rest.get('/users/1', (req, res, ctx) => res(

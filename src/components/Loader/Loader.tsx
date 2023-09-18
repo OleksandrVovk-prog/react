@@ -1,6 +1,7 @@
+import { testIdLoader } from '../../constants/TestId';
+
 import type { ReactElement } from 'react';
 
-import { testIdLoader } from '../../constants/TestId';
 import loader from '../../assets/images/loader.svg';
 
 import styles from './sass/Loader.module.scss';

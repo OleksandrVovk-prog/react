@@ -1,11 +1,12 @@
-import type { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import useErrorMessage from '../../hooks/useErrorMessage';
-import InputTypes from '../../constants/InputTypes';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import type ILoginView from './interfaces/ILoginView';
+import InputTypes from '../../constants/InputTypes';
+import useErrorMessage from '../../hooks/useErrorMessage';
 import TextInput from './components/TextInput';
+
+import type { ReactElement } from 'react';
+import type ILoginView from './interfaces/ILoginView';
 
 import styles from './sass/LoginView.module.scss';
 

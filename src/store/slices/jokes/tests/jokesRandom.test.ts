@@ -1,9 +1,9 @@
 import { waitFor } from '@testing-library/react';
 
-import { renderHook } from '../../../../../__tests__/test-utils';
-import useFetchJokeQuery from '../apis/jokesRandom';
 import { initServer } from '../../../../../__tests__/mswServer';
+import { renderHook } from '../../../../../__tests__/test-utils';
 import joke from '../../../../mocks/joke';
+import useFetchJokeQuery from '../apis/jokesRandom';
 
 initServer();
 

@@ -1,12 +1,13 @@
-import type { ReactElement, ComponentType } from 'react';
-import { HashRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
 import { I18nextProvider } from 'react-i18next';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import { persistor, makeStore, store } from '../../src/store/store';
-import auth from '../../src/mocks/auth';
 import i18n from '../../src/i18n';
+import auth from '../../src/mocks/auth';
+import { makeStore, persistor, store } from '../../src/store/store';
+
+import type { ComponentType, ReactElement } from 'react';
 
 function Preview(Story: ComponentType): ReactElement {
   const state = store.getState();

@@ -1,22 +1,22 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import {
-  persistStore,
-  persistReducer,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
+  persistReducer,
+  persistStore,
   PURGE,
   REGISTER,
+  REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import dummyApi from './apis/dummy';
+import jokesApi from './apis/jokes';
 import auth from './slices/auth/slice';
 import jokes from './slices/jokes/slice';
 import translates from './slices/translates/slice';
-import dummyApi from './apis/dummy';
-import jokesApi from './apis/jokes';
 
 const persistConfig = {
   key: 'root',

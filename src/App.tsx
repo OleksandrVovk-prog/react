@@ -1,12 +1,15 @@
-import type { ReactElement } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './i18n';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Page from './layout/Page/Page';
 import PageProtected from './layout/Page/PageProtected';
-import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
-import './i18n';
+
+import type { ReactElement } from 'react';
+
 import './styles/global.scss';
 
 function App(): ReactElement {

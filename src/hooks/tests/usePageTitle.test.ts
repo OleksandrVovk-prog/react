@@ -1,6 +1,6 @@
 import { renderHook } from '../../../__tests__/test-utils';
-import usePageTitle from '../usePageTitle';
 import i18n from '../../i18n';
+import usePageTitle from '../usePageTitle';
 
 describe('usePageTitle', () => {
   test('should return default page title', () => {

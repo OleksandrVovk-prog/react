@@ -1,5 +1,5 @@
-import { loginSchema, editProfileSchema } from '../validators';
 import user, { userCredentials } from '../../mocks/user';
+import { editProfileSchema, loginSchema } from '../validators';
 
 describe('validators', () => {
   test('loginSchema is valid', async () => {

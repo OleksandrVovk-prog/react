@@ -1,8 +1,8 @@
 import { renderHook } from '../../../../../__tests__/test-utils';
-import { useAppSelector } from '../../../hooks/useApp';
-import { selectStatus, selectJoke } from '../selectors';
 import Statuses from '../../../../constants/Statuses';
 import jokesMock from '../../../../mocks/joke';
+import { useAppSelector } from '../../../hooks/useApp';
+import { selectJoke, selectStatus } from '../selectors';
 
 describe('jokes selectors', () => {
   test(`selectStatus should return ${Statuses.idle} status by default`, () => {

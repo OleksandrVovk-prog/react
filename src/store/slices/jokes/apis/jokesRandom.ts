@@ -1,4 +1,5 @@
 import jokesApi from '../../../apis/jokes';
+
 import type IJokeResponse from '../interfaces/IJokeResponse';
 
 const randomJokesApi = jokesApi.injectEndpoints({

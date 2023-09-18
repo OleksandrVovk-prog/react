@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import PageProtected from '../PageProtected';
+
+import type { Meta, StoryObj } from '@storybook/react';
 import type IPageProtected from '../interfaces/IPageProtected';
 
 const meta: Meta<typeof PageProtected> = {

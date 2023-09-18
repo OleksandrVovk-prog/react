@@ -1,23 +1,24 @@
-import type { ReactElement } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
-import { toggleLocale } from '../../store/slices/translates/slice';
-import { selectLocale } from '../../store/slices/translates/selectors';
-import { selectUserId, selectCurrentUser } from '../../store/slices/auth/selectors';
-import { logout } from '../../store/slices/auth/slice';
-import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
-import dummyAuth from '../../store/apis/dummy';
+import LinkButton from '../../components/LinkButton/LinkButton';
+import Loader from '../../components/Loader/Loader';
+import Subtitle from '../../components/Subtitle/Subtitle';
 import {
   testIdHeader,
   testIdLoginButton,
   testIdLogoutButton,
   testIdToggleLanguageButton,
 } from '../../constants/TestId';
-import Subtitle from '../../components/Subtitle/Subtitle';
-import LinkButton from '../../components/LinkButton/LinkButton';
-import Loader from '../../components/Loader/Loader';
+import dummyAuth from '../../store/apis/dummy';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
+import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
+import { selectCurrentUser, selectUserId } from '../../store/slices/auth/selectors';
+import { logout } from '../../store/slices/auth/slice';
+import { selectLocale } from '../../store/slices/translates/selectors';
+import { toggleLocale } from '../../store/slices/translates/slice';
+
+import type { ReactElement } from 'react';
 
 import styles from './sass/Header.module.scss';
 

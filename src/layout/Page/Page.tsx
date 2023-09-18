@@ -1,9 +1,10 @@
-import type { ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import Title from '../../components/Title/Title';
 import usePageTitle from '../../hooks/usePageTitle';
 import Header from '../Header/Header';
-import Title from '../../components/Title/Title';
+
+import type { ReactElement } from 'react';
 
 /**
  * Main page layout
