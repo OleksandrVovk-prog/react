@@ -10,7 +10,7 @@ import styles from './sass/HomeView.module.scss';
  * Home page view
  */
 function HomeView(): ReactElement {
-  const { data, refetch, isFetching } = useFetchJokeQuery();
+  const { data, refetch: onGetJoke, isFetching } = useFetchJokeQuery();
   const { t } = useTranslation();
   return (
     <div>
@@ -19,7 +19,7 @@ function HomeView(): ReactElement {
           <Loader />
         ) : (
           <>
-            <button type="button" onClick={refetch}>{ t('home.getJoke') }</button>
+            <button type="button" onClick={onGetJoke}>{ t('home.getJoke') }</button>
             <p>{data?.value}</p>
           </>
         )}

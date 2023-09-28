@@ -55,6 +55,10 @@
     "react/jsx-uses-react": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
     "react/react-in-jsx-scope": "off", // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
     "react/jsx-no-leaked-render": "error",
+    "react/jsx-handler-names": ["error", {
+      "checkLocalVariables": true,
+      "eventHandlerPrefix": "on"
+    }],
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/consistent-type-imports": "error"
   },
