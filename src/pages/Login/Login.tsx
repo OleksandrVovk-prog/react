@@ -24,11 +24,12 @@ function Login(): ReactElement {
     resolver: yupResolver(loginSchema),
   });
   const onLoginSubmit = handleSubmit(async (credentials): Promise<void> => {
-    const response = await login(credentials);
-    if (!('error' in response)) {
-      reset();
-      navigate('/');
-    }
+    login(credentials)
+      .unwrap()
+      .catch(() => {
+        reset();
+        navigate('/');
+      });
   });
   return id ? (
     <Navigate to="/" />
