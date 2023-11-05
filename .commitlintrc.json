@@ -1,8 +1,11 @@
 {
   "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "subject-case": [2, "never"]
+  },
   "parserPreset": {
     "parserOpts": {
-      "issuePrefixes": ["REACT-", "#"]
+      "issuePrefixes": ["JIRA-", "#"]
     }
   }
 }
