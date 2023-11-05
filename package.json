@@ -109,5 +109,17 @@
       "customScope": true,
       "skipBreaking": true
     }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {
+      "subject-case": [2, "never"],
+      "references-empty": [2, "never"]
+    },
+    "parserPreset": {
+      "parserOpts": {
+        "issuePrefixes": ["JIRA-", "#"]
+      }
+    }
   }
 }
