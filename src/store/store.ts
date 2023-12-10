@@ -15,7 +15,6 @@ import storage from 'redux-persist/lib/storage';
 import dummyApi from './apis/dummy';
 import jokesApi from './apis/jokes';
 import auth from './slices/auth/slice';
-import jokes from './slices/jokes/slice';
 import translates from './slices/translates/slice';
 
 const persistConfig = {
@@ -30,7 +29,6 @@ const persistedReducer = persistReducer(
   combineReducers({
     [jokesApi.reducerPath]: jokesApi.reducer,
     [dummyApi.reducerPath]: dummyApi.reducer,
-    jokes,
     auth,
     translates,
   }),
