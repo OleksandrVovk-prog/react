@@ -15,13 +15,14 @@ import storage from 'redux-persist/lib/storage';
 import dummyApi from './apis/dummy';
 import jokesApi from './apis/jokes';
 import auth from './slices/auth/slice';
+import theme from './slices/theme/slice';
 import translates from './slices/translates/slice';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['auth'],
+  whitelist: ['auth', 'theme'],
 };
 
 const persistedReducer = persistReducer(
@@ -31,6 +32,7 @@ const persistedReducer = persistReducer(
     [dummyApi.reducerPath]: dummyApi.reducer,
     auth,
     translates,
+    theme,
   }),
 );
 
