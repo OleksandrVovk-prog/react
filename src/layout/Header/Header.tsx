@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/useApp';
 import { useFetchUserQuery } from '../../store/slices/auth/apis/dummyAuth';
 import { selectCurrentUser, selectUserId } from '../../store/slices/auth/selectors';
 import { logout } from '../../store/slices/auth/slice';
-import { selectCurrentTheme } from '../../store/slices/theme/selectors';
+import selectCurrentTheme from '../../store/slices/theme/selectors';
 import { toggleTheme } from '../../store/slices/theme/slice';
 import { selectLocale } from '../../store/slices/translates/selectors';
 import { toggleLocale } from '../../store/slices/translates/slice';

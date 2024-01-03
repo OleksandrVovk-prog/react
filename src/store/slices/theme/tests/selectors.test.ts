@@ -1,7 +1,7 @@
 import { renderHook } from '../../../../../__tests__/test-utils';
 import Theme from '../../../../constants/Theme';
 import { useAppSelector } from '../../../hooks/useApp';
-import { selectCurrentTheme } from '../selectors';
+import selectCurrentTheme from '../selectors';
 
 describe('theme selectors', () => {
   test(`selectCurrentTheme should return ${Theme.light} by default`, () => {
