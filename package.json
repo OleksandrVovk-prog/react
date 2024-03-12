@@ -60,7 +60,6 @@
     "prop-types": "^15.8.1",
     "storybook": "^7.6.4",
     "storybook-addon-mock": "^4.3.0",
-    "ts-prune": "^0.10.3",
     "typescript": "^5.0.4",
     "webpack": "^5.89.0"
   },
