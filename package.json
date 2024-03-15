@@ -77,7 +77,7 @@
     "test-coverage": "react-scripts test --coverage",
     "test-check": "./.scripts/test-check.js",
     "test-ci": "react-scripts test --watchAll=false",
-    "find-deadcode": "knip"
+    "find-deadcode": "knip --config .scripts/knip.ts"
   },
   "browserslist": {
     "production": [
