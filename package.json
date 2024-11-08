@@ -55,10 +55,10 @@
     "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.3",
     "inquirer": "^9.2.12",
+    "knip": "^5.0.4",
     "msw": "^1.3.2",
     "storybook": "^7.6.4",
     "storybook-addon-mock": "^4.3.0",
-    "ts-prune": "^0.10.3",
     "typescript": "^5.0.4",
     "webpack": "^5.89.0"
   },
@@ -76,7 +76,7 @@
     "test-coverage": "react-scripts test --coverage",
     "test-check": "./.scripts/test-check.js",
     "test-ci": "react-scripts test --watchAll=false",
-    "find-deadcode": "./.scripts/find-deadcode.sh"
+    "find-deadcode": "knip --config .scripts/knip.ts"
   },
   "browserslist": {
     "production": [
@@ -112,14 +112,25 @@
     }
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"],
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
     "rules": {
-      "subject-case": [2, "never"],
-      "references-empty": [2, "never"]
+      "subject-case": [
+        2,
+        "never"
+      ],
+      "references-empty": [
+        2,
+        "never"
+      ]
     },
     "parserPreset": {
       "parserOpts": {
-        "issuePrefixes": ["JIRA-", "#"]
+        "issuePrefixes": [
+          "JIRA-",
+          "#"
+        ]
       }
     }
   }
