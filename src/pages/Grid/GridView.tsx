@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 import { toast, ToastContainer } from 'react-toastify';
 
 import { GRID_HEIGHT, GRID_WIDTH } from '../../constants/Grid';
-import { getContrastColor } from '../../utils/helpers';
+import { getAdaptiveFontSize, getContrastColor } from '../../utils/helpers';
 
 import type { IGridView } from './interfaces/IGridView';
 
@@ -78,6 +78,7 @@ function GridView({
               height: GRID_HEIGHT,
               backgroundColor: square.color,
               color: getContrastColor(square.color),
+              fontSize: getAdaptiveFontSize(GRID_WIDTH),
             }}
           >
             Eddie

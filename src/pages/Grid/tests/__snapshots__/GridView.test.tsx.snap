@@ -16,7 +16,7 @@ exports[`<GridView /> should render component 1`] = `
     />
     <div
       class="gridItem react-draggable"
-      style="width: 50px; height: 50px; background-color: rgb(196, 17, 152); color: rgb(255, 255, 255); transform: translate(0px,0px);"
+      style="width: 50px; height: 50px; background-color: rgb(187, 147, 246); color: rgb(0, 0, 0); font-size: 12.5px; transform: translate(0px,0px);"
     >
       Eddie
     </div>

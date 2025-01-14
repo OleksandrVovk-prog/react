@@ -1,4 +1,6 @@
-import { getContrastColor, getItemSize, getRandomColor } from '../helpers';
+import {
+  getAdaptiveFontSize, getContrastColor, getItemSize, getRandomColor,
+} from '../helpers';
 
 describe('helpers', () => {
   test('getRandomColor is working', async () => {
@@ -8,9 +10,9 @@ describe('helpers', () => {
 
   test('getItemSize is working', async () => {
     const size = 50;
-    const contexPosition = 320;
+    const contextPosition = 320;
     const expected = 300;
-    const result = getItemSize(contexPosition, size);
+    const result = getItemSize(contextPosition, size);
     expect(result).toBe(expected);
   });
 
@@ -18,6 +20,13 @@ describe('helpers', () => {
     const hexColor = '#FFFFFF';
     const expected = '#000000';
     const result = getContrastColor(hexColor);
+    expect(result).toBe(expected);
+  });
+
+  test('getAdaptiveFontSize is working', async () => {
+    const gridWidth = 100;
+    const expected = 25;
+    const result = getAdaptiveFontSize(gridWidth);
     expect(result).toBe(expected);
   });
 });

@@ -1,4 +1,4 @@
-export const getItemSize = (contexPosition: number, size: number): number => Math.floor(contexPosition / size) * size;
+export const getItemSize = (contextPosition: number, size: number): number => Math.floor(contextPosition / size) * size;
 
 export const getRandomColor = (): string => {
   const letters = '0123456789ABCDEF';
@@ -18,3 +18,5 @@ export const getContrastColor = (hexColor: string): string => {
 
   return luminance > 0.5 ? '#000000' : '#FFFFFF';
 };
+
+export const getAdaptiveFontSize = (gridWidth: number): number => Math.max(8, gridWidth * 0.25);
