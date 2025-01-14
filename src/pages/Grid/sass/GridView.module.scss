@@ -1,0 +1,26 @@
+.gridContainer {
+  width: 100vw;
+  height: 100vh;
+  background-image:
+    linear-gradient(to right, lightgray 1px, transparent 1px), linear-gradient(to bottom, lightgray 1px, transparent 1px);
+  position: relative;
+  overflow: hidden;
+
+  .gridContextMenu {
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .gridItem {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: grab;
+  }
+}

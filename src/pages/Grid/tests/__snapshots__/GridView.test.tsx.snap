@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridView /> should render component 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    class="gridContainer"
+    style="background-size: 50px 50px;"
+  >
+    <section
+      aria-atomic="false"
+      aria-label="Notifications Alt+T"
+      aria-live="polite"
+      aria-relevant="additions text"
+      class="Toastify"
+    />
+    <div
+      class="gridItem react-draggable"
+      style="width: 50px; height: 50px; background-color: rgb(34, 178, 158); color: rgb(0, 0, 0); transform: translate(0px,0px);"
+    >
+      Eddie
+    </div>
+  </div>
+</DocumentFragment>
+`;
