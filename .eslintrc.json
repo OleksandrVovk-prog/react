@@ -68,7 +68,8 @@
       "singleline": {
         "delimiter": "comma"
       }
-    }]
+    }],
+    "react-hooks/exhaustive-deps": "off"
   },
   "overrides": [
     { //https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations
